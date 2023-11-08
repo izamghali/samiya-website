@@ -4,11 +4,22 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px'
+    },
     extend: {
       colors: {
         primary: '#1c1c1c'
       },
+      fontFamily: {
+        inter: ['Inter'],
+        mont: ['Montserrat']
+      }
     },
   },
   plugins: [],
