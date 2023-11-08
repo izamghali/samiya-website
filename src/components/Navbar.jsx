@@ -12,12 +12,12 @@ function Navbar(props) {
     }
 
     return (
-        <nav className="bg-primary md:p-10 p-8 text-white">
+        <nav className=" bg-blue-500 dark:bg-primary md:p-10 p-8 text-white">
             {/* Navbar container */}
             <div className="flex justify-between items-center">
 
                 {/* Brand */}
-                <svg className="xl:h-14 md:h-10 h-8 fill-white" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                <svg className="xl:h-12 md:h-10 h-8 fill-white" version="1.0" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 708.000000 172.000000"
                 preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0.000000,172.000000) scale(0.100000,-0.100000)"
@@ -71,14 +71,14 @@ function Navbar(props) {
                 </svg>
 
                 {/* Menu Container */}
-                <div className="lg:space-x-8 md:space-x-6 md:block hidden">
+                <div className="2xl:space-x-20 xl:space-x-16 lg:space-x-10 md:space-x-5 md:block hidden">
                     <a href="">About</a>
                     <a href="">Our Services</a>
                     <a href="">Gallery</a>
                     <a href="">How We Work</a>
                     {/* FIX: dark/light mode toggle */}
                     {/* <button></button> */} 
-                    <button>Contact Us</button>
+                    <button className="border-2 border-white px-6 py-2 duration-300 hover:bg-white hover:text-black">Contact Us</button>
                 </div>
 
                 {/* Hamburger Toggle Container */}
