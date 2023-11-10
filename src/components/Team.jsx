@@ -8,21 +8,21 @@ function Team(props) {
             shortName: 'Febri',
             pro: 'Photographer/Videographer',
             link: 'https://www.instagram.com/aditya_p24',
-            img: 'src/assets/team/1.webp',
+            img: '../assets/team/1.webp',
         },
         {
             name: 'Nurman Adi Tama',
             shortName: 'Nurman',
             pro: 'Director/Editor',
             link: 'https://www.instagram.com/nurman_tama',
-            img: 'src/assets/team/2.webp',
+            img: '../assets/team/2.webp',
         },
         {
             name: 'Muhammad Harits Fadhli',
             shortName: 'Harits',
             pro: 'Photographer/Editor',
             link: 'https://www.instagram.com/haritsfadhli/',
-            img: 'src/assets/team/3.webp',
+            img: '../assets/team/3.webp',
         },
     
     ]
@@ -57,7 +57,7 @@ function Team(props) {
 
                             {/* card content - md */}
                             <div className="
-                                group-hover:flex flex-col group-hover:translate-x-0 -translate-x-[100%]
+                                group-hover:flex flex-col group-hover:translate-x-0 -translate-x-[100%] group-hover:opacity-100 opacity-30
                                 absolute bottom-0 bg-[rgba(0,0,0,0.7)] p-4 rounded-tr-lg w-fit min-w-[10rem]
                                 duration-300 border-2 rounded-bl-lg border-t-0 border-r-0 border-white z-30
                                 items-start">
