@@ -19,12 +19,12 @@ function Service(props) {
     ]
 
     return (
-        <div className="cont bg-black">
+        <section className="cont bg-black">
             <h2 className="text-center text-white">Our Photography Services</h2>
             <p className="text-center sub-heading text-darkGray">Enjoy professional photography services with Samiya Studio</p>
 
             {/* Card Container */}
-            <div className="flex md:flex-row flex-col justify-center items-center mt-8 gap-8 sm:gap-4 flex-wrap">
+            <div className="card-container mt-8 flex-wrap">
 
                 {/* Card */}
                 {serviceData.map(data => {
@@ -50,7 +50,7 @@ function Service(props) {
                 })}
 
             </div>
-        </div>
+        </section>
     )
 };
 
