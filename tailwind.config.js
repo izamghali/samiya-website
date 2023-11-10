@@ -14,7 +14,12 @@ export default {
     },
     extend: {
       colors: {
-        primary: '#1c1c1c'
+        primary: '#1c1c1c',
+        accent: '#269DF2',
+        accentLess: '#4F738C',
+        ligthGray: '#595959',
+        darkGray: '#ADADAD',
+
       },
       fontFamily: {
         inter: ['Inter'],

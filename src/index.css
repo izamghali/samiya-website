@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .cont {
+        @apply py-24;
+    }
+
+    .btn {
+        @apply bg-accent text-white rounded-lg;
+    }
+
+    .sub-heading {
+        @apply font-mont; 
+    }
+}
+
+@layer base {
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-mont;
+    }
+
+    h2 {
+        @apply text-3xl font-semibold;
+    }
+}
+
 /* hamburger menu */
 .hamburger {
     cursor: pointer;
