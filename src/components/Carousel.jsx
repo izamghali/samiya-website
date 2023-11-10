@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react"
-import { encode } from "blurhash";
+import carousel1 from '../assets/carousel/1.webp';
 
 function Carousel(props) {
-
-    const testSrc = './public/carousel/1.webp';
 
     // FIXME: Add blurhash while image loading
     return (
         <div>
-            <img src={testSrc} alt="" />
+            <img src={carousel1} alt="" />
         </div>
     )
 };

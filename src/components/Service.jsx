@@ -1,19 +1,22 @@
 import React from "react"
+import img1 from '../assets/service-card/food-94.webp';
+import img2 from '../assets/service-card/fashion-9.webp';
+import img3 from '../assets/service-card/product-8.webp';
 
 function Service(props) {
 
     const serviceData = [
         {
             title: 'Food',
-            img: './public/service-card/food-94.webp'
+            img: img1
         },
         {
             title: 'Fashion',
-            img: './public/service-card/fashion-9.webp'
+            img: img2
         },
         {
             title: 'Product',
-            img: './public/service-card/product-8.webp'
+            img: img3
         },
     
     ]

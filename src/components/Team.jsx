@@ -1,4 +1,7 @@
 import React from "react"
+import profile1 from '../assets/team/1.webp';
+import profile2 from '../assets/team/2.webp';
+import profile3 from '../assets/team/3.webp';
 
 function Team(props) {
 
@@ -8,21 +11,21 @@ function Team(props) {
             shortName: 'Febri',
             pro: 'Photographer/Videographer',
             link: 'https://www.instagram.com/aditya_p24',
-            img: './public/team/1.webp',
+            img: profile1,
         },
         {
             name: 'Nurman Adi Tama',
             shortName: 'Nurman',
             pro: 'Director/Editor',
             link: 'https://www.instagram.com/nurman_tama',
-            img: './public/team/2.webp',
+            img: profile2,
         },
         {
             name: 'Muhammad Harits Fadhli',
             shortName: 'Harits',
             pro: 'Photographer/Editor',
             link: 'https://www.instagram.com/haritsfadhli/',
-            img: './public/team/3.webp',
+            img: profile3,
         },
     
     ]

@@ -3,6 +3,7 @@ import Carousel from "./Carousel";
 import About from "./About";
 import Service from "./Service";
 import Team from "./Team";
+import Client from "./Client"
 
 function HomePage(props) {
     return (
@@ -11,6 +12,7 @@ function HomePage(props) {
             {/* <About /> */}
             <Service/>
             <Team/>
+            <Client/>
         </div>
     )
 };
