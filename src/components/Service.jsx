@@ -24,14 +24,14 @@ function Service(props) {
             <p className="text-center sub-heading text-darkGray">Enjoy professional photography services with Samiya Studio</p>
 
             {/* Card Container */}
-            <div className="flex flex-col md:flex-row justify-center space-x-8 mt-8">
+            <div className="flex md:flex-row flex-col justify-center items-center mt-8 gap-8 sm:gap-4 flex-wrap">
 
                 {/* Card */}
                 {serviceData.map(data => {
                     return <div className="border-2 border-darkGray rounded-lg max-w-sm space-y-10 p-4">
                             <div>
-                                <div className="relative w-full h-[20rem] mb-4">
-                                    <img className="rounded-lg h-full w-full object-center object-cover " src={data.img} alt="" />
+                                <div className="relative h-[20rem] mb-4">
+                                    <img className="rounded-lg w-full h-full object-center object-cover" src={data.img} alt="" />
                                     <span className="absolute top-4 right-4 bg-black opacity-80 text-white p-1 rounded-md">
                                         Photo
                                     </span>
