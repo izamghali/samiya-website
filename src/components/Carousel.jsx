@@ -3,7 +3,7 @@ import { encode } from "blurhash";
 
 function Carousel(props) {
 
-    const testSrc = 'src/assets/carousel/1.webp';
+    const testSrc = './src/assets/carousel/1.webp';
 
     // FIXME: Add blurhash while image loading
     return (
