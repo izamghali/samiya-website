@@ -22,12 +22,12 @@ function Navbar(props) {
     }
 
     return (
-        <nav className=" bg-blue-500 dark:bg-primary md:p-10 p-8 text-white">
+        <nav className=" bg-white dark:bg-primary md:p-10 p-8 text-white">
             {/* Navbar container */}
             <div className="flex justify-between items-center">
 
                 {/* Brand */}
-                <svg className="xl:h-12 md:h-10 h-8 fill-white" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                <svg className="xl:h-12 md:h-10 h-8 dark:fill-white fill-black" version="1.0" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 708.000000 172.000000"
                 preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0.000000,172.000000) scale(0.100000,-0.100000)"
@@ -81,7 +81,7 @@ function Navbar(props) {
                 </svg>
 
                 {/* Menu Container */}
-                <div className="2xl:space-x-20 xl:space-x-16 lg:space-x-10 md:space-x-5 md:flex items-center hidden">
+                <div className="2xl:space-x-20 xl:space-x-16 lg:space-x-10 md:space-x-5 md:flex items-center hidden font-mont text-black dark:text-white">
                     <a href="">About</a>
                     <a href="">Our Services</a>
                     <button className="relative flex items-center gap-1" onClick={handleDropDown} id="drop-down">
@@ -117,7 +117,20 @@ function Navbar(props) {
                     <a href="">How We Work</a>
                     {/* FIX: dark/light mode toggle */}
                     {/* <button></button> */} 
-                    <button className="border-2 border-white px-6 py-2 duration-300 hover:bg-white hover:text-black rounded-lg">Contact Us</button>
+                    <div className="
+                            relative dark:static border-accent hover:bg-primary
+                            px-6 py-2 dark:border-2 cursor-pointer bg-accent text-white
+                            rounded-lg font-semibold group duration-300">
+                            Contact Us
+                        <div className="dark:hidden absolute font-semibold z-30 top-0 left-0 bg-accent hover:bg-accentLess hover:text-white px-6 py-2 rounded-lg duration-300">
+                            Contact Us
+                        </div>
+                        <div className="dark:hidden
+                            absolute bg-black w-full h-full
+                            top-0 left-0 z-20 translate-x-1 translate-y-1 rounded-lg
+                            group-hover:translate-x-0 group-hover:translate-y-0 duration-300
+                            "></div>
+                    </div>
                 </div>
 
                 {/* Hamburger Toggle Container */}
