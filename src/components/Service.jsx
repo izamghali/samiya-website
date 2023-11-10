@@ -5,15 +5,15 @@ function Service(props) {
     const serviceData = [
         {
             title: 'Food',
-            img: './src/assets/service-card/food-94.webp'
+            img: './public/service-card/food-94.webp'
         },
         {
             title: 'Fashion',
-            img: './src/assets/service-card/fashion-9.webp'
+            img: './public/service-card/fashion-9.webp'
         },
         {
             title: 'Product',
-            img: './src/assets/service-card/product-8.webp'
+            img: './public/service-card/product-8.webp'
         },
     
     ]

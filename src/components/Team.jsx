@@ -8,21 +8,21 @@ function Team(props) {
             shortName: 'Febri',
             pro: 'Photographer/Videographer',
             link: 'https://www.instagram.com/aditya_p24',
-            img: './src/assets/team/1.webp',
+            img: './public/team/1.webp',
         },
         {
             name: 'Nurman Adi Tama',
             shortName: 'Nurman',
             pro: 'Director/Editor',
             link: 'https://www.instagram.com/nurman_tama',
-            img: './src/assets/team/2.webp',
+            img: './public/team/2.webp',
         },
         {
             name: 'Muhammad Harits Fadhli',
             shortName: 'Harits',
             pro: 'Photographer/Editor',
             link: 'https://www.instagram.com/haritsfadhli/',
-            img: './src/assets/team/3.webp',
+            img: './public/team/3.webp',
         },
     
     ]
