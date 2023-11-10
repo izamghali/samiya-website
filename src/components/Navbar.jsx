@@ -1,4 +1,5 @@
 import React from "react"
+import gsap from 'gsap';
 
 function Navbar(props) {
 
@@ -9,6 +10,15 @@ function Navbar(props) {
         btn.classList.toggle('open');
         menu.classList.toggle('flex');
         menu.classList.toggle('hidden');
+    }
+    
+    function handleDropDown() {
+        // const dropDown = document.getElementById('drop-down');
+        const menu = document.getElementById('drop-down-menu');
+        
+        menu.classList.toggle('flex');
+        menu.classList.toggle('hidden');
+
     }
 
     return (
@@ -71,14 +81,45 @@ function Navbar(props) {
                 </svg>
 
                 {/* Menu Container */}
-                <div className="2xl:space-x-20 xl:space-x-16 lg:space-x-10 md:space-x-5 md:block hidden">
+                <div className="2xl:space-x-20 xl:space-x-16 lg:space-x-10 md:space-x-5 md:flex items-center hidden">
                     <a href="">About</a>
                     <a href="">Our Services</a>
-                    <a href="">Gallery</a>
+                    <button className="relative flex items-center gap-1" onClick={handleDropDown} id="drop-down">
+                        Gallery
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+
+                        {/* {<Transition
+                            as={Fragment}
+                            enter="transition ease-out duration-100"
+                            enterFrom="transform opacity-0 scale-95"
+                            enterTo="transform opacity-100 scale-100"
+                            leave="transition ease-in duration-75"
+                            leaveFrom="transform opacity-100 scale-100"
+                            leaveTo="transform opacity-0 scale-95"
+                        ></Transition>} */}
+                        
+                        <div 
+                            id="drop-down-menu" 
+                            className="
+                                absolute -bottom-36 right-0
+                                border-2 border-white bg-black text-white 
+                                hidden flex-col items-start py-2 space-y-2 rounded-lg w-32
+                            ">
+                            <a href="" className="hover:bg-stone-400 w-full text-left py-1 px-2">Food</a>
+                            <a href="" className="hover:bg-stone-400 w-full text-left py-1 px-2">Fashion</a>
+                            <a href="" className="hover:bg-stone-400 w-full text-left py-1 px-2">Product</a>
+                        </div>
+                    </button>
+                    
+                    {/* <div>
+                    </div> */}
+
                     <a href="">How We Work</a>
                     {/* FIX: dark/light mode toggle */}
                     {/* <button></button> */} 
-                    <button className="border-2 border-white px-6 py-2 duration-300 hover:bg-white hover:text-black">Contact Us</button>
+                    <button className="border-2 border-white px-6 py-2 duration-300 hover:bg-white hover:text-black rounded-lg">Contact Us</button>
                 </div>
 
                 {/* Hamburger Toggle Container */}
