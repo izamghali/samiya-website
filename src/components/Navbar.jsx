@@ -100,6 +100,7 @@ function Navbar(props) {
                             leaveTo="transform opacity-0 scale-95"
                         ></Transition>} */}
                         
+                        {/* FIX:  add transition to dropdown */}
                         <div 
                             id="drop-down-menu" 
                             className="
@@ -112,9 +113,6 @@ function Navbar(props) {
                             <a href="" className="hover:bg-stone-400 w-full text-left py-1 px-2">Product</a>
                         </div>
                     </button>
-                    
-                    {/* <div>
-                    </div> */}
 
                     <a href="">How We Work</a>
                     {/* FIX: dark/light mode toggle */}

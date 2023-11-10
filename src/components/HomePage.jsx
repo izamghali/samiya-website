@@ -1,9 +1,10 @@
 import React from "react"
+import Carousel from "./Carousel";
 
 function HomePage(props) {
     return (
         <div>
-            <h1 className="bg-violet-500">Home Page!!!</h1>
+            <Carousel/>
         </div>
     )
 };
