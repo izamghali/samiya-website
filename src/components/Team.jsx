@@ -60,7 +60,8 @@ function Team(props) {
 
                             {/* card content - md */}
                             <div className="
-                                group-hover:flex flex-col group-hover:translate-x-0 -translate-x-[100%] group-hover:opacity-100 opacity-30
+                                group-hover:md:translate-x-0 -translate-x-[100%] md:-translate-x-[100%]
+                                flex-col group-hover:opacity-100 opacity-30
                                 absolute bottom-0 bg-[rgba(0,0,0,0.7)] p-4 rounded-tr-lg w-fit min-w-[10rem]
                                 duration-300 border-2 rounded-bl-lg border-t-0 border-r-0 border-white z-30
                                 items-start">
