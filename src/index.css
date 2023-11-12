@@ -4,15 +4,19 @@
 
 @layer components {
     .cont {
-        @apply py-24 px-4 md:px-8;
+        @apply lg:py-24 md:py-20 py-16 px-4 md:px-8 sm:px-6;
     }
 
-    .btn {
-        @apply bg-accent text-white rounded-lg;
+    .white-cont {
+        @apply bg-stone-100;
     }
 
-    .sub-heading {
-        @apply font-mont; 
+    .black-cont {
+        @apply bg-stone-950; 
+    }
+
+    .margin-heading {
+        @apply mb-10;
     }
 
     .card-container {
