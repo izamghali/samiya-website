@@ -4,6 +4,7 @@ import About from "./About";
 import Service from "./Service";
 import Team from "./Team";
 import Client from "./Client"
+import Work from "./Work";
 
 function HomePage(props) {
     return (
@@ -11,6 +12,7 @@ function HomePage(props) {
             <Carousel/>
             {/* <About /> */}
             <Service/>
+            <Work/>
             <Team/>
             <Client/>
         </div>
