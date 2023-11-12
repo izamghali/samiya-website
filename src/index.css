@@ -22,6 +22,12 @@
     .card-container {
         @apply flex md:flex-row flex-col justify-center items-center md:gap-8 gap-4;
     }
+
+    .stripes {
+        @apply dark:bg-stone-50 bg-stone-950 
+        outline outline-[1.5px] outline-stone-50
+        dark:outline-stone-950;
+    }
 }
 
 @layer base {
@@ -43,15 +49,12 @@
     position: relative;
 }
 
-.hamburger-top, 
-.hamburger-middle,
-.hamburger-bottom {
+.stripes {
     position: absolute;
     width: 24px;
     height: 2px;
     top:0;
     left: 0;
-    background: #fff;
     transform: rotate(0);
     transition: all 0.25s;
     @apply rounded-full;

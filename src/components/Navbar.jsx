@@ -1,5 +1,4 @@
 import React from "react"
-import gsap from 'gsap';
 
 function Navbar(props) {
 
@@ -132,9 +131,9 @@ function Navbar(props) {
                 {/* Hamburger Toggle Container */}
                 <div class="lg:hidden fixed top-0 right-0 z-40 p-10" onClick={handleNavbarToggle}>
                     <button class="z-40 hamburger lg:hidden focus:outline-none flex flex-col" id="menu-btn" type="button">
-                        <span class="hamburger-top"></span>
-                        <span class="hamburger-middle"></span>
-                        <span class="hamburger-bottom"></span>
+                        <span class="stripes hamburger-top"></span>
+                        <span class="stripes hamburger-middle"></span>
+                        <span class="stripes hamburger-bottom"></span>
                     </button>
                 </div>
 
@@ -142,14 +141,14 @@ function Navbar(props) {
 
             <div id="menu" 
                 class="font-mont
-                    hidden lg:hidden flex-col fixed left-0 top-0 px-6
+                    hidden lg:hidden flex-col fixed left-0 top-0 px-6 z-30
                     self-end w-full min-h-screen pt-40 text-right
                     space-y-3 text-lg text-white bg-[rgba(0,0,0,0.6)]">
-                <a href="#" class="hover:pink-500">About</a>
-                <a href="#" class="hover:pink-500">Our Services</a>
-                <a href="#" class="hover:pink-500">Gallery</a>
-                <a href="#" class="hover:pink-500">How We Work</a>
-                <a href="#" class="hover:pink-500">Contact Us</a>
+                <a href="#" class="">About</a>
+                <a href="#" class="">Our Services</a>
+                <a href="#" class="">Gallery</a>
+                <a href="#" class="">How We Work</a>
+                <a href="#" class="">Contact Us</a>
             </div>
         </nav>
     )
