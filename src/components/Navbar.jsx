@@ -22,7 +22,7 @@ function Navbar(props) {
     }
 
     return (
-        <nav className=" bg-white dark:bg-primary md:p-10 p-8 text-white">
+        <nav className=" bg-stone-50 dark:bg-stone-950 md:p-10 p-8 text-white">
             {/* Navbar container */}
             <div className="flex justify-between items-center">
 
@@ -81,7 +81,7 @@ function Navbar(props) {
                 </svg>
 
                 {/* Menu Container */}
-                <div className="2xl:space-x-20 xl:space-x-16 lg:space-x-10 md:space-x-5 md:flex items-center hidden font-mont text-black dark:text-white">
+                <div className="2xl:space-x-20 xl:space-x-16 lg:space-x-10 md:space-x-5 lg:flex items-center hidden font-mont text-black dark:text-white">
                     <a href="">About</a>
                     <a href="">Our Services</a>
                     <button className="relative flex items-center gap-1" onClick={handleDropDown} id="drop-down">
@@ -116,26 +116,22 @@ function Navbar(props) {
 
                     <a href="">How We Work</a>
                     {/* FIX: dark/light mode toggle */}
-                    {/* <button></button> */} 
-                    <div className="
-                            relative dark:static border-accent hover:bg-primary
-                            px-6 py-2 dark:border-2 cursor-pointer bg-accent text-white
-                            rounded-lg font-semibold group duration-300">
-                            Contact Us
-                        <div className="dark:hidden absolute font-semibold z-30 top-0 left-0 bg-accent hover:bg-accentLess hover:text-white px-6 py-2 rounded-lg duration-300">
-                            Contact Us
-                        </div>
-                        <div className="dark:hidden
-                            absolute bg-black w-full h-full
-                            top-0 left-0 z-20 translate-x-1 translate-y-1 rounded-lg
-                            group-hover:translate-x-0 group-hover:translate-y-0 duration-300
-                            "></div>
-                    </div>
+                    
+                    <button className="border-2 rounded-lg px-6 py-2 duration-300 font-semibold
+                        bg-stone-950 dark:bg-stone-100 
+                        border-stone-950 dark:border-white
+                        text-stone-100 dark:text-stone-950 
+                        hover:text-stone-950 hover:dark:text-stone-100
+                        hover:bg-stone-50 hover:dark:bg-stone-950    
+                        ">
+                        Contact Us
+                    </button> 
+
                 </div>
 
                 {/* Hamburger Toggle Container */}
-                <div class="md:hidden" onClick={handleNavbarToggle}>
-                    <button class="z-40 block hamburger md:hidden focus:outline-none" id="menu-btn" type="button">
+                <div class="lg:hidden fixed top-0 right-0 z-40 p-10" onClick={handleNavbarToggle}>
+                    <button class="z-40 hamburger lg:hidden focus:outline-none flex flex-col" id="menu-btn" type="button">
                         <span class="hamburger-top"></span>
                         <span class="hamburger-middle"></span>
                         <span class="hamburger-bottom"></span>
@@ -144,12 +140,16 @@ function Navbar(props) {
 
             </div>
 
-            <div id="menu" class="hidden absolute top-0 bottom-0 left-0 flex-col self-end w-full min-h-screen py-1 pt-40 pl-12 space-y-3 text-lg text-white uppercase bg-black">
+            <div id="menu" 
+                class="font-mont
+                    hidden lg:hidden flex-col fixed left-0 top-0 px-6
+                    self-end w-full min-h-screen pt-40 text-right
+                    space-y-3 text-lg text-white bg-[rgba(0,0,0,0.6)]">
                 <a href="#" class="hover:pink-500">About</a>
-                <a href="#" class="hover:pink-500">Careers</a>
-                <a href="#" class="hover:pink-500">Events</a>
-                <a href="#" class="hover:pink-500">Products</a>
-                <a href="#" class="hover:pink-500">Support</a>
+                <a href="#" class="hover:pink-500">Our Services</a>
+                <a href="#" class="hover:pink-500">Gallery</a>
+                <a href="#" class="hover:pink-500">How We Work</a>
+                <a href="#" class="hover:pink-500">Contact Us</a>
             </div>
         </nav>
     )
