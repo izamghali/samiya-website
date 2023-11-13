@@ -11,10 +11,10 @@ function HomePage(props) {
     return (
         <div>
             <Carousel/>
-            {/* <About /> */}
             <Service/>
             <Work/>
             <Team/>
+            <About />
             <Client/>
             <Footer />
         </div>

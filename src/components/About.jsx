@@ -1,48 +1,54 @@
 import React from "react";
+import bg1 from '../assets/bg-img/food-84.webp';
+import bg2 from '../assets/bg-img/food-135.webp';
+import bg3 from '../assets/bg-img/food-100.webp';
 
 function About(props) {
     return (
-        <section className="cont white-cont lg:flex items-center block gap-16">
+        <section className="cont white-cont" id="about">
             
-            {/* about container */}
-            <div className="">
-                <svg className="w-20 hidden lg:block" version="1.0" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 460.000000 610.000000"
-                preserveAspectRatio="xMidYMid meet">
-                    <g transform="translate(0.000000,610.000000) scale(0.100000,-0.100000)"
-                    fill="#000000" stroke="none">
-                        <path d="M2110 6093 c-163 -12 -398 -62 -563 -120 -579 -201 -1042 -613 -1312
-                        -1168 -111 -226 -173 -427 -212 -685 -23 -158 -23 -481 0 -644 110 -739 550
-                        -1365 1207 -1714 268 -143 606 -238 916 -258 l104 -7 0 -750 0 -750 148 6
-                        c180 8 316 28 490 73 896 229 1577 1002 1697 1927 29 228 16 569 -31 782 -133
-                        600 -483 1109 -994 1445 -134 89 -366 200 -527 253 -197 66 -473 117 -628 117
-                        l-45 0 0 750 0 750 -102 -2 c-57 -1 -123 -3 -148 -5z m140 -797 l0 -694 -57
-                        -7 c-128 -16 -286 -84 -395 -170 -121 -94 -225 -254 -270 -411 -32 -114 -33
-                        -316 0 -427 88 -307 336 -531 641 -579 l81 -12 0 -695 0 -694 -107 6 c-324 19
-                        -674 131 -972 309 -216 130 -471 361 -621 562 -303 406 -456 896 -437 1396 37
-                        982 719 1815 1677 2049 63 16 156 34 205 40 50 6 101 13 115 15 14 2 51 4 83
-                        5 l57 1 0 -694z m0 -1496 l0 -690 -26 0 c-104 0 -285 84 -389 182 -231 216
-                        -290 536 -150 817 92 182 252 310 460 366 28 8 62 14 78 14 l27 1 0 -690z
-                        m330 676 c719 -97 1328 -523 1668 -1166 109 -206 193 -469 228 -715 22 -160
-                        22 -430 0 -590 -91 -633 -434 -1175 -974 -1538 -119 -80 -362 -198 -507 -246
-                        -185 -61 -453 -111 -595 -111 l-40 0 0 693 0 693 89 17 c353 66 608 340 651
-                        699 18 150 -8 303 -76 443 -77 158 -201 282 -359 361 -89 44 -221 84 -277 84
-                        l-28 0 0 695 0 695 58 0 c31 0 104 -7 162 -14z m-49 -1522 c103 -37 184 -89
-                        259 -164 339 -338 246 -895 -183 -1112 -57 -28 -190 -68 -229 -68 -17 0 -18
-                        27 -18 691 l0 692 51 -7 c27 -4 82 -18 120 -32z"/>
-                    </g>
-                </svg>
-            </div>
+            {/* <svg className="w-40 hidden lg:block fill-white" version="1.0" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 460.000000 610.000000"
+            preserveAspectRatio="xMidYMid meet">
+                <g transform="translate(0.000000,610.000000) scale(0.100000,-0.100000)" stroke="none">
+                    <path d="M2110 6093 c-163 -12 -398 -62 -563 -120 -579 -201 -1042 -613 -1312
+                    -1168 -111 -226 -173 -427 -212 -685 -23 -158 -23 -481 0 -644 110 -739 550
+                    -1365 1207 -1714 268 -143 606 -238 916 -258 l104 -7 0 -750 0 -750 148 6
+                    c180 8 316 28 490 73 896 229 1577 1002 1697 1927 29 228 16 569 -31 782 -133
+                    600 -483 1109 -994 1445 -134 89 -366 200 -527 253 -197 66 -473 117 -628 117
+                    l-45 0 0 750 0 750 -102 -2 c-57 -1 -123 -3 -148 -5z m140 -797 l0 -694 -57
+                    -7 c-128 -16 -286 -84 -395 -170 -121 -94 -225 -254 -270 -411 -32 -114 -33
+                    -316 0 -427 88 -307 336 -531 641 -579 l81 -12 0 -695 0 -694 -107 6 c-324 19
+                    -674 131 -972 309 -216 130 -471 361 -621 562 -303 406 -456 896 -437 1396 37
+                    982 719 1815 1677 2049 63 16 156 34 205 40 50 6 101 13 115 15 14 2 51 4 83
+                    5 l57 1 0 -694z m0 -1496 l0 -690 -26 0 c-104 0 -285 84 -389 182 -231 216
+                    -290 536 -150 817 92 182 252 310 460 366 28 8 62 14 78 14 l27 1 0 -690z
+                    m330 676 c719 -97 1328 -523 1668 -1166 109 -206 193 -469 228 -715 22 -160
+                    22 -430 0 -590 -91 -633 -434 -1175 -974 -1538 -119 -80 -362 -198 -507 -246
+                    -185 -61 -453 -111 -595 -111 l-40 0 0 693 0 693 89 17 c353 66 608 340 651
+                    699 18 150 -8 303 -76 443 -77 158 -201 282 -359 361 -89 44 -221 84 -277 84
+                    l-28 0 0 695 0 695 58 0 c31 0 104 -7 162 -14z m-49 -1522 c103 -37 184 -89
+                    259 -164 339 -338 246 -895 -183 -1112 -57 -28 -190 -68 -229 -68 -17 0 -18
+                    27 -18 691 l0 692 51 -7 c27 -4 82 -18 120 -32z"/>
+                </g>
+            </svg> */}
 
-            <div>
-                <h2 className="mb-4">About</h2>
-                <p>Berawal dari kesamaan minat ketika mengambil jurusan S-1 Fotografi di Fakultas Seni Media Rekam ISI Yogyakarta pada tahun 2015, akhirnya lahirlah Samiya Studio dari tiga teman sepermainan yang berkembang menjadi teman seprofesi, yaitu Febriansyah Aditya Pratama, M. Harits Fadhli dan Nurman Adi Tama.
+            {/* about container */}
+            <div className="flex flex-col lg:flex-row lg:gap-10 gap-6 lg:max-w-xl lg:mx-auto">
+                <h2 className="lg:mb-0 text-black lg:border-t-2 border-lightGray lg:py-4 py-0">About</h2>
+                <p className="text-lightGray font-light md:font-normal">
+                Established in June 2020, Samiya Studio, based in Yogyakarta, specializes in professional photography and videography services.
                     <br/>
                     <br/>
-                Pada 01 Juni 2020 adalah awal perjalanan Samiya Studio dalam melayani jasa fotografi dan videografi profesional. Hingga saat ini kami memiliki puluhan klien yang sudah percaya dengan kami dengan beragam produk dan bisnisnya. Mulai dari bisnis kuliner, produk, fashion dan juga profil institusi dikerjakan Samiya Studio selama 3 tahun terakhir. Selain di kota Yogyakarta, Samiya Studio juga mengerjakan projek di beberapa kota lainnya seperti Solo, Klaten, Semarang dan juga Purwokerto.
+                    Over the past three years, we've worked with lots of diverse clients from different sectors such as culinary, products, and fashion.
+                    Our portfolio extends beyond Yogyakarta to cities including Solo, Klaten, Semarang, and Purwokerto.
                     <br/>
                     <br/>
-                Dalam setiap project, Samiya Studio selalu berusaha memberikan performa terbaik, karena Samiya Studio percaya foto dan video terbaik akan memberikan dampak positif terhadap strategi komunikasi klien dalam menyampaikan pesan kepada audiensnya.</p>
+                    We're all about doing our best to make sure our clients' messages come across great in their photos and videos. 
+                    <br/>
+                    <br/>
+                    <span className="italic font-normal md:font-medium text-black tracking-wider">To capture the perfect one!</span>
+                </p>
             </div>
 
         </section>
