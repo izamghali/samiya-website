@@ -5,6 +5,7 @@ import Service from "./Service";
 import Team from "./Team";
 import Client from "./Client"
 import Work from "./Work";
+import Footer from "./Footer";
 
 function HomePage(props) {
     return (
@@ -15,6 +16,7 @@ function HomePage(props) {
             <Work/>
             <Team/>
             <Client/>
+            <Footer />
         </div>
     )
 };

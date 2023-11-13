@@ -8,7 +8,7 @@
     }
 
     .white-cont {
-        @apply bg-stone-100;
+        @apply bg-stone-50;
     }
 
     .black-cont {
@@ -37,6 +37,10 @@
 
     h2 {
         @apply text-3xl font-semibold;
+    }
+
+    p, span {
+        @apply font-inter;
     }
 }
 
