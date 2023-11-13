@@ -24,6 +24,13 @@ export default {
       fontFamily: {
         inter: ['Inter'],
         mont: ['Montserrat']
+      },
+      backgroundImage: {
+        'about1': "url('./src/assets/bg-img/food-11.webp')",
+        'about2': "url('./src/assets/bg-img/food-133.webp')",
+        'about3': "url('./src/assets/bg-img/food-100.webp')",
+        'about4': "url('./src/assets/bg-img/food-84.webp')",
+        'about5': "url('./src/assets/bg-img/food-135.webp')",
       }
     },
   },
