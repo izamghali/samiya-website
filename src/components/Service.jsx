@@ -22,7 +22,7 @@ function Service(props) {
     ]
 
     return (
-        <section className="cont black-cont">
+        <section className="cont black-cont" id="service">
             <h2 className="text-center text-white">Our Photography Services</h2>
             <p className="text-center font-mont margin-heading text-darkGray lg:text-lg">Capture Moments with Samiya Studio</p>
 

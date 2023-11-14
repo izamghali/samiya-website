@@ -31,7 +31,7 @@ function Work(props) {
     ]
 
     return (
-        <section className="white-cont md:flex">
+        <section className="white-cont md:flex" id="work">
             
             {/* carousel container */}
             <div className="hidden lg:block w-full xl:w-[120%] lg:w-[110%]">

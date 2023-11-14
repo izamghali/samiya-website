@@ -28,7 +28,7 @@ function Navbar(props) {
     }
 
     return (
-        <nav className=" bg-stone-50 dark:bg-stone-950 toggle-padding text-white">
+        <nav className="snap-start bg-stone-50 dark:bg-stone-950 toggle-padding text-white">
             {/* Navbar container */}
             <div className="flex justify-between items-center">
 
@@ -88,8 +88,8 @@ function Navbar(props) {
 
                 {/* Menu Container */}
                 <div className="2xl:space-x-20 xl:space-x-16 lg:space-x-10 md:space-x-5 lg:flex items-center hidden font-mont text-black dark:text-white">
-                    <a href="">About</a>
-                    <a href="">Our Services</a>
+                    <a href="#about">About</a>
+                    <a href="#service">Our Services</a>
                     <button className="relative flex items-center gap-1" onClick={handleDropDown} id="drop-down">
                         Gallery
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
@@ -120,7 +120,7 @@ function Navbar(props) {
                         </div>
                     </button>
 
-                    <a href="">How We Work</a>
+                    <a href="#work">How We Work</a>
                     {/* FIX: dark/light mode toggle */}
                     
                     <button className="border-2 rounded-lg px-6 py-2 duration-300 font-semibold
@@ -150,14 +150,14 @@ function Navbar(props) {
 
             <div id="menu" 
                 class="font-mont
-                    hidden lg:hidden flex-col fixed left-0 top-0 px-8 z-20
-                    self-end w-full min-h-screen pt-40 text-right
-                    space-y-3 text-lg text-white bg-[rgba(0,0,0,0.6)]">
-                <a href="#" class="">About</a>
-                <a href="#" class="">Our Services</a>
-                <a href="#" class="">Gallery</a>
-                <a href="#" class="">How We Work</a>
-                <a href="#" class="" id="contact-btn" onClick={handleContact}>Contact Us</a>
+                    hidden lg:hidden flex-col fixed left-0 top-0 px-8 z-20 items-end
+                    self-end w-full min-h-screen pt-40
+                    gap-3 text-lg text-white bg-[rgba(0,0,0,0.6)]">
+                <a href="#" class="w-fit">About</a>
+                <a href="#" class="w-fit">Our Services</a>
+                <a href="#" class="w-fit">Gallery</a>
+                <a href="#" class="w-fit">How We Work</a>
+                <a class="w-fit" id="contact-btn" onClick={handleContact}>Contact Us</a>
             </div>
         </nav>
     )

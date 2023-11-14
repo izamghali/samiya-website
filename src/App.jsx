@@ -18,6 +18,7 @@ function App() {
         : 
         <Navbar/>
       } */}
+      <div className='bg-stone-950 h-10'></div> {/* NOTE:  ignore this; this exists so the scroll snaps back to Navbar */}
       <Navbar/>
 
       { test ? <Gallery/> : <HomePage/> }
