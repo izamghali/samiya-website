@@ -45,7 +45,7 @@ function Work(props) {
 
             {/* content container */}
             {/* NOTE:  cont */}
-            <div className="cont w-full h-full"> 
+            <div className="cont w-full"> 
                 <h2 className="margin-heading">How We Work</h2>
 
                 {/* container */}

@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-    .cont {
-        @apply lg:py-24 md:py-20 py-16 px-4 md:px-8 sm:px-6;
-    }
-
     .white-cont {
         @apply bg-stone-50;
     }
@@ -48,9 +44,17 @@
     .input {
         @apply border-[1.5px] border-darkGray p-2 rounded-md w-full focus:outline-accent;
     }
+
+    .cont {
+        @apply lg:py-24 md:py-20 py-16 px-4 md:px-8 sm:px-6;
+    }
 }
 
 @layer base {
+    section {
+        @apply snap-start snap-always; 
+    }
+
     h1, h2, h3, h4, h5, h6 {
         @apply font-mont;
     }

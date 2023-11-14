@@ -9,7 +9,7 @@ import Footer from "./Footer";
 
 function HomePage(props) {
     return (
-        <div>
+        <div className="">
             <Carousel/>
             <Service/>
             <Work/>

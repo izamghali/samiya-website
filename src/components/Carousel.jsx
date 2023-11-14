@@ -5,9 +5,9 @@ function Carousel(props) {
 
     // FIXME: Add blurhash while image loading
     return (
-        <div>
+        <section className="">
             <img src={carousel1} alt="" />
-        </div>
+        </section>
     )
 };
 

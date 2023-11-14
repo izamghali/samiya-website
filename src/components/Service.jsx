@@ -27,7 +27,7 @@ function Service(props) {
             <p className="text-center font-mont margin-heading text-darkGray lg:text-lg">Capture Moments with Samiya Studio</p>
 
             {/* Card Container */}
-            <div className="flex lg:flex-row flex-col justify-center xl:gap-8 gap-4 lg:gap-2 lg:justify-evenly xl:justify-center items-center">
+            <div className="lg:snap-none snap-y snap-proximity flex lg:flex-row flex-col justify-center xl:gap-8 gap-4 lg:gap-2 lg:justify-evenly xl:justify-center items-center">
 
                 {/* Card */}
                 {serviceData.map(data => {
@@ -36,6 +36,7 @@ function Service(props) {
                                 max-w-sm lg:max-w-sm sm:max-w-max 
                                 flex flex-col lg:flex-col sm:flex-row
                                 gap-2 sm:gap-4 lg:gap-2 p-4 
+                                snap-start lg:snap-align-none
                                 ">
                                 <div className="relative h-[20rem] w-full">
                                     <img className="rounded-lg w-full h-full object-center object-cover" src={data.img} alt="" />

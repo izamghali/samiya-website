@@ -20,7 +20,7 @@ function Footer(props) {
     return (
         <footer className="cont bg-lighterGray
         flex flex-col lg:flex-row lg:justify-between
-        gap-4
+        gap-4 snap-end
         ">
             {/* left */}
             <div className="flex flex-col gap-4">

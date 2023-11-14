@@ -11,8 +11,13 @@ function App() {
 
   return (
     <>
-    <div className='dark'>
+    <div className="dark">
       <ContactPage/>
+      {/* { test ? 
+        <Navbar/>
+        : 
+        <Navbar/>
+      } */}
       <Navbar/>
 
       { test ? <Gallery/> : <HomePage/> }

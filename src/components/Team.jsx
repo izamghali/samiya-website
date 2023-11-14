@@ -37,11 +37,11 @@ function Team(props) {
             <h2 className="text-white margin-heading text-center">Meet The Team</h2>
 
             {/* card container */}
-            <div className="card-container">
+            <div className="card-container lg:snap-none  snap-y snap-proximity">
 
                 {/* card */}
                 {teamData.map(data => {
-                    return <div className="relative group md:max-w-[26rem] sm:w-[24rem] w-full overflow-hidden">
+                    return <div className="snap-start lg:snap-align-none relative group md:max-w-[26rem] sm:w-[24rem] w-full overflow-hidden">
                             <img className=" w-full rounded-tr-lg rounded-tl-lg md:rounded-br-lg md:rounded-bl-lg" src={data.img} alt="" />
 
                             {/* card content */}
