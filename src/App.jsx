@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Gallery from './components/Gallery'
 import HomePage from './components/HomePage'
+import ContactPage from './components/ContactPage'
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
     <div className='dark'>
+      <ContactPage/>
       <Navbar/>
 
       { test ? <Gallery/> : <HomePage/> }

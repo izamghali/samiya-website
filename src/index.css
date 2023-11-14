@@ -28,6 +28,26 @@
         outline outline-[1.5px] outline-stone-50
         dark:outline-stone-950;
     }
+
+    .toggle-padding {
+        @apply md:p-10 p-8;
+    }
+
+    .icon-link {
+        @apply flex 
+        border-[1.5px] border-black
+        justify-center items-center
+        w-fit p-4 rounded-full 
+        md:hover:bg-stone-950 duration-300;
+    }
+
+    .icon-link-svg {
+        @apply md:group-hover:fill-stone-50;
+    }
+
+    .input {
+        @apply border-[1.5px] border-darkGray p-2 rounded-md w-full focus:outline-accent;
+    }
 }
 
 @layer base {

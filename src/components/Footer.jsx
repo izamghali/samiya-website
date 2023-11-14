@@ -18,7 +18,7 @@ function Footer(props) {
     ]
 
     return (
-        <footer className="cont bg-[hsl(240,11%,94%)] 
+        <footer className="cont bg-lighterGray
         flex flex-col lg:flex-row lg:justify-between
         gap-4
         ">
@@ -43,16 +43,8 @@ function Footer(props) {
                     {/* icon container */}
                     <div className="flex flex-row gap-4">
                         {socialData.map(data => {
-                            return <a 
-                                        className="flex 
-                                            border-[1.5px] border-black
-                                            justify-center items-center
-                                            w-fit p-4 rounded-full
-                                        "
-                                        target="_blank"
-                                        href={data.link}
-                                    >
-                                <svg class="bi bi-instagram w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            return <a className="icon-link group" target="_blank" href={data.link}>
+                                <svg class="bi w-5 icon-link-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                     <path d={data.svg}/>
                                 </svg>
                             </a>

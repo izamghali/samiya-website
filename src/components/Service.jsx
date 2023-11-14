@@ -24,7 +24,7 @@ function Service(props) {
     return (
         <section className="cont black-cont">
             <h2 className="text-center text-white">Our Photography Services</h2>
-            <p className="text-center font-mont margin-heading text-darkGray">Enjoy professional photography services with Samiya Studio</p>
+            <p className="text-center font-mont margin-heading text-darkGray lg:text-lg">Capture Moments with Samiya Studio</p>
 
             {/* Card Container */}
             <div className="flex lg:flex-row flex-col justify-center xl:gap-8 gap-4 lg:gap-2 lg:justify-evenly xl:justify-center items-center">
