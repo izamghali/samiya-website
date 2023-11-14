@@ -20,8 +20,15 @@ function Navbar(props) {
 
     }
 
+    function handleContact() {
+        const page = document.getElementById('contact-page');
+
+        page.classList.add('translate-y-0')
+        page.classList.remove('translate-y-full')
+    }
+
     return (
-        <nav className=" bg-stone-50 dark:bg-stone-950 md:p-10 p-8 text-white">
+        <nav className=" bg-stone-50 dark:bg-stone-950 toggle-padding text-white">
             {/* Navbar container */}
             <div className="flex justify-between items-center">
 
@@ -122,15 +129,17 @@ function Navbar(props) {
                         text-stone-100 dark:text-stone-950 
                         hover:text-stone-950 hover:dark:text-stone-100
                         hover:bg-stone-50 hover:dark:bg-stone-950    
-                        ">
+                        "
+                        onClick={handleContact}
+                        >
                         Contact Us
                     </button> 
 
                 </div>
 
                 {/* Hamburger Toggle Container */}
-                <div class="lg:hidden fixed top-0 right-0 z-40 p-10" onClick={handleNavbarToggle}>
-                    <button class="z-40 hamburger lg:hidden focus:outline-none flex flex-col" id="menu-btn" type="button">
+                <div class="lg:hidden fixed top-0 right-0 z-30 toggle-padding" onClick={handleNavbarToggle}>
+                    <button class="hamburger lg:hidden focus:outline-none flex flex-col" id="menu-btn" type="button">
                         <span class="stripes hamburger-top"></span>
                         <span class="stripes hamburger-middle"></span>
                         <span class="stripes hamburger-bottom"></span>
@@ -141,14 +150,14 @@ function Navbar(props) {
 
             <div id="menu" 
                 class="font-mont
-                    hidden lg:hidden flex-col fixed left-0 top-0 px-6 z-30
+                    hidden lg:hidden flex-col fixed left-0 top-0 px-8 z-20
                     self-end w-full min-h-screen pt-40 text-right
                     space-y-3 text-lg text-white bg-[rgba(0,0,0,0.6)]">
                 <a href="#" class="">About</a>
                 <a href="#" class="">Our Services</a>
                 <a href="#" class="">Gallery</a>
                 <a href="#" class="">How We Work</a>
-                <a href="#" class="">Contact Us</a>
+                <a href="#" class="" id="contact-btn" onClick={handleContact}>Contact Us</a>
             </div>
         </nav>
     )

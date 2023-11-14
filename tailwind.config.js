@@ -19,6 +19,7 @@ export default {
         accentLess: '#4F738C',
         lightGray: '#595959',
         darkGray: '#ADADAD',
+        lighterGray: '#E8EBF2',
 
       },
       fontFamily: {
