@@ -8,14 +8,17 @@ function Service(props) {
     const serviceData = [
         {
             title: 'Food',
+            desc: "Elevate your culinary creations with our vibrant and flavorful food photography, capturing the essence of each dish.",
             img: img1
         },
         {
             title: 'Fashion',
+            desc: "Set your brand apart with our dynamic fashion photography, creating visually striking images that tell a compelling style story.",
             img: img2
         },
         {
             title: 'Product',
+            desc: "Showcase your products with precision and allure through our professional photography, designed to captivate customers and boost sales.",
             img: img3
         },
     
@@ -33,7 +36,7 @@ function Service(props) {
                 {serviceData.map(data => {
                     return <div className="
                                 border-2 border-darkGray rounded-lg 
-                                max-w-sm lg:max-w-sm sm:max-w-max 
+                                max-w-sm lg:max-w-sm sm:max-w-full 
                                 flex flex-col lg:flex-col sm:flex-row
                                 gap-2 sm:gap-4 lg:gap-2 p-4 
                                 snap-start lg:snap-align-none
@@ -49,7 +52,7 @@ function Service(props) {
                                 <div className="flex flex-col justify-evenly">
                                     <div className="lg:mb-8 sm:mb-0 mb-8">
                                         <h3 className="text-2xl text-white">{data.title} Photography</h3>
-                                        <p className="text-darkGray">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <p className="text-darkGray lg:min-h-[8rem]">{data.desc}</p>
                                     </div>
                                     <a 
                                         href="https://wa.me/6289616041234" target="_blank" 

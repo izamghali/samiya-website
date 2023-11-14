@@ -65,8 +65,7 @@ function ContactPage(props) {
                     </div>
                 </div>
 
-                {/* FIX:  form tag */}
-                <form action="" className="md:w-3/4 w-full flex flex-col gap-4">
+                <form action="" className="md:w-3/4 w-full sm:flex flex-col gap-4 hidden">
                     <div className="flex gap-4">
                         <input className="input" type="text" name="" id="" placeholder="Type your name"/>
                         <input className="input" type="email" name="" id="" placeholder="example@email.com"/>
