@@ -7,7 +7,7 @@ import ContactPage from './components/ContactPage'
 
 function App() {
 
-  let test = true;
+  let test = false;
 
   function snapScroll() {
     const the = document.getElementById('the-html');
