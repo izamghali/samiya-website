@@ -7,8 +7,21 @@ import ContactPage from './components/ContactPage'
 
 function App() {
 
-  let test = false;
+  let test = true;
 
+  function snapScroll() {
+    const the = document.getElementById('the-html');
+    let classes = ['scroll-smooth', 'snap-y', 'snap-mandatory', 'overflow-scroll']
+    
+    if (!test) {
+      classes.map(data => { the.classList.add(data) })
+    } else {
+      classes.map(data => { the.classList.remove(data) })
+    }
+  }
+
+  snapScroll();
+    
   return (
     <>
     <div className="dark">
@@ -18,7 +31,7 @@ function App() {
         : 
         <Navbar/>
       } */}
-      <div className='bg-stone-950 h-10'></div> {/* NOTE:  ignore this; this exists so the scroll snaps back to Navbar */}
+      { !test ? <div className='bg-stone-950 h-10'></div> : <div></div> } {/* NOTE:  ignore this; this exists so the scroll snaps back to Navbar */}
       <Navbar/>
 
       { test ? <Gallery/> : <HomePage/> }
