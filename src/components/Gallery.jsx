@@ -37,8 +37,6 @@ function Gallery(props) {
     const layer = document.getElementById('layer');
     function showImage(event) {
         const clicked = event.target;
-        clickedPhoto = <img src={clicked} />;
-        console.log(clickedPhoto)
 
         layer.classList.add('flex')
         layer.classList.remove('hidden')
@@ -61,23 +59,23 @@ function Gallery(props) {
     }
 
     return (
-        <section className="cont bg-violet-300 pt-0">
+        <section className="cont black-cont pt-0">
 
-            <div className="bg-emerald-300 max-w-6xl mx-auto">
+            <div className=" max-w-6xl mx-auto">
                 {/* filter */}
                 <div className="mb-6">
                     {/* a tag container */}
                     <div className="flex gap-8 sm:gap-10 flex-row-reverse md:flex-row">
-                        <a className="uppercase" href="">Food</a>
-                        <a className="uppercase" href="">Fashion</a>
-                        <a className="uppercase" href="">Product</a>
+                        <a className="uppercase text-accent" href="">Food</a>
+                        <a className="uppercase text-accent" href="">Fashion</a>
+                        <a className="uppercase text-accent" href="">Product</a>
                     </div>
                     {/* drop down */}
                 </div>
 
                 <div className="columns-1 lg:columns-3 sm:columns-2 gap-x-6 space-y-6">
                     {photos.map(photo => {
-                        return <div className="border-2 border-white overflow-hidden group cursor-pointer" onClick={showImage}>
+                        return <div className="overflow-hidden group cursor-pointer" onClick={showImage}>
                             <img className="group-hover:scale-110 duration-300" src={photo} alt="" />
                         </div>
                     })}
@@ -85,8 +83,7 @@ function Gallery(props) {
 
                 <div className="fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)] hidden justify-center items-center duration-500" onClick={hideImage} id="layer">
                     <div className="bg-white p-2">
-                        This is the clicked photo is still in development! 
-                        {clickedPhoto}
+                        photo preview feature is still in development! 
                         {/* <img src={clickedPhoto} alt="" /> */}
                     </div>
                 </div>

@@ -2,6 +2,8 @@ import React from "react"
 
 function Navbar(props) {
 
+    const { page, setPage } = props;
+
     function handleNavbarToggle() {
         const btn = document.getElementById('menu-btn');
         const menu = document.getElementById('menu');
@@ -27,13 +29,16 @@ function Navbar(props) {
         page.classList.remove('translate-y-full')
     }
 
+    function displayHomePage() { setPage(false) }
+    function displayGallery() { setPage(true) }
+
     return (
         <nav className="snap-start bg-stone-50 dark:bg-stone-950 toggle-padding text-white">
             {/* Navbar container */}
             <div className="flex justify-between items-center">
 
                 {/* Brand */}
-                <svg className="xl:h-12 md:h-10 h-8 dark:fill-white fill-black" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                <svg onClick={displayHomePage} className="xl:h-12 md:h-10 h-8 dark:fill-white fill-black cursor-pointer" version="1.0" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 708.000000 172.000000"
                 preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0.000000,172.000000) scale(0.100000,-0.100000)"
@@ -88,8 +93,8 @@ function Navbar(props) {
 
                 {/* Menu Container */}
                 <div className="2xl:space-x-20 xl:space-x-16 lg:space-x-10 md:space-x-5 lg:flex items-center hidden font-mont text-black dark:text-white">
-                    <a href="#about">About</a>
-                    <a href="#service">Our Services</a>
+                    <a onClick={displayHomePage} href="#about" >About</a>
+                    <a onClick={displayHomePage} href="#service" >Our Services</a>
                     <button className="relative flex items-center gap-1" onClick={handleDropDown} id="drop-down">
                         Gallery
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
@@ -114,13 +119,13 @@ function Navbar(props) {
                                 border-2 border-white bg-black text-white 
                                 hidden flex-col items-start py-2 space-y-2 rounded-lg w-32
                             ">
-                            <a href="" className="hover:bg-stone-400 w-full text-left py-1 px-2">Food</a>
-                            <a href="" className="hover:bg-stone-400 w-full text-left py-1 px-2">Fashion</a>
-                            <a href="" className="hover:bg-stone-400 w-full text-left py-1 px-2">Product</a>
+                            <a onClick={displayGallery} className="hover:bg-stone-400 w-full text-left py-1 px-2">Food</a>
+                            <a onClick={displayGallery} className="hover:bg-stone-400 w-full text-left py-1 px-2">Fashion</a>
+                            <a onClick={displayGallery} className="hover:bg-stone-400 w-full text-left py-1 px-2">Product</a>
                         </div>
                     </button>
 
-                    <a href="#work">How We Work</a>
+                    <a onClick={displayHomePage} href="#work">How We Work</a>
                     {/* FIX: dark/light mode toggle */}
                     
                     <button className="border-2 rounded-lg px-6 py-2 duration-300 font-semibold
@@ -153,10 +158,10 @@ function Navbar(props) {
                     hidden lg:hidden flex-col fixed left-0 top-0 px-8 z-20 items-end
                     self-end w-full min-h-screen pt-40
                     gap-3 text-lg text-white bg-[rgba(0,0,0,0.6)]">
-                <a href="#" class="w-fit">About</a>
-                <a href="#" class="w-fit">Our Services</a>
-                <a href="#" class="w-fit">Gallery</a>
-                <a href="#" class="w-fit">How We Work</a>
+                <a onClick={displayHomePage} href="#" class="w-fit">About</a>
+                <a onClick={displayHomePage} href="#" class="w-fit">Our Services</a>
+                <a onClick={displayGallery} href="#" class="w-fit">Gallery</a>
+                <a onClick={displayHomePage} href="#" class="w-fit">How We Work</a>
                 <a class="w-fit" id="contact-btn" onClick={handleContact}>Contact Us</a>
             </div>
         </nav>

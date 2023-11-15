@@ -7,34 +7,29 @@ import ContactPage from './components/ContactPage'
 
 function App() {
 
-  let test = true;
+  const [ page, setPage ] = useState(false)
 
   function snapScroll() {
     const the = document.getElementById('the-html');
     let classes = ['scroll-smooth', 'snap-y', 'snap-mandatory', 'overflow-scroll']
     
-    if (!test) {
+    if (!page) {
       classes.map(data => { the.classList.add(data) })
     } else {
       classes.map(data => { the.classList.remove(data) })
     }
   }
-
   snapScroll();
     
   return (
     <>
     <div className="dark">
       <ContactPage/>
-      {/* { test ? 
-        <Navbar/>
-        : 
-        <Navbar/>
-      } */}
-      { !test ? <div className='bg-stone-950 h-10'></div> : <div></div> } {/* NOTE:  ignore this; this exists so the scroll snaps back to Navbar */}
-      <Navbar/>
 
-      { test ? <Gallery/> : <HomePage/> }
+      { !page ? <div className='bg-stone-950 h-10'></div> : <div></div> } {/* NOTE:  ignore this; this exists so the scroll snaps back to Navbar */}
+      <Navbar page={page} setPage={setPage}/>
+
+      { page ? <Gallery/> : <HomePage/> }
       
     </div>
     </>
