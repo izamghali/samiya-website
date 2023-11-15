@@ -30,12 +30,34 @@ function Gallery(props) {
       
         return array;
     }
-      
-    // Used like so
     shuffle(photos);
 
-    function showImage() {
-        console.log('displayed!')
+    let clickedPhoto = '';
+
+    const layer = document.getElementById('layer');
+    function showImage(event) {
+        const clicked = event.target;
+        clickedPhoto = <img src={clicked} />;
+        console.log(clickedPhoto)
+
+        layer.classList.add('flex')
+        layer.classList.remove('hidden')
+        
+        setTimeout(() => {
+            layer.classList.add('opacity-100')
+            layer.classList.remove('opacity-0')
+        }, 50)
+        
+    }
+
+    function hideImage() {
+        layer.classList.add('opacity-0') 
+        layer.classList.remove('opacity-100') 
+
+        setTimeout(() => {
+            layer.classList.add('hidden') 
+            layer.classList.remove('flex') 
+        }, 400) 
     }
 
     return (
@@ -53,7 +75,6 @@ function Gallery(props) {
                     {/* drop down */}
                 </div>
 
-                {/* FIX:  gallery */}
                 <div className="columns-1 lg:columns-3 sm:columns-2 gap-x-6 space-y-6">
                     {photos.map(photo => {
                         return <div className="border-2 border-white overflow-hidden group cursor-pointer" onClick={showImage}>
@@ -62,9 +83,13 @@ function Gallery(props) {
                     })}
                 </div>
 
-                {/* <div className="fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)]">
-                    <h1 className="text-white">Hello World!</h1>
-                </div> */}
+                <div className="fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)] hidden justify-center items-center duration-500" onClick={hideImage} id="layer">
+                    <div className="bg-white p-2">
+                        This is the clicked photo is still in development! 
+                        {clickedPhoto}
+                        {/* <img src={clickedPhoto} alt="" /> */}
+                    </div>
+                </div>
             </div>
         </section>
     )
