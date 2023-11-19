@@ -1,4 +1,5 @@
 import React from "react"
+import { shuffle } from "../helpers.js";
 import test1 from "../assets/gallery-test/test-1.webp"
 import test2 from "../assets/gallery-test/test-2.webp"
 import test3 from "../assets/gallery-test/test-3.webp"
@@ -13,23 +14,6 @@ function Gallery(props) {
     const photos = [test1, test2, test3, test4, test5, test6, test7, test8]
     // grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
 
-    function shuffle(array) {
-        let currentIndex = array.length,  randomIndex;
-      
-        // While there remain elements to shuffle.
-        while (currentIndex > 0) {
-      
-          // Pick a remaining element.
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex--;
-      
-          // And swap it with the current element.
-          [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
-        }
-      
-        return array;
-    }
     shuffle(photos);
 
     let clickedPhoto = '';

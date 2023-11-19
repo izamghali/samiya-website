@@ -6,6 +6,7 @@ import Team from "./Team";
 import Client from "./Client"
 import Work from "./Work";
 import Footer from "./Footer";
+import CheckGallery from "./CheckGallery";
 
 function HomePage(props) {
     return (
@@ -15,6 +16,7 @@ function HomePage(props) {
             <Work/>
             <Team/>
             <About />
+            <CheckGallery />
             <Client/>
             <Footer />
         </div>
