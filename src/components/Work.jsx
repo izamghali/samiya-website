@@ -38,9 +38,9 @@ function Work(props) {
         <section className="white-cont md:flex" id="work">
             
             {/* carousel container */}
-            <div className="hidden lg:block w-full xl:w-[120%] lg:w-[110%]">
+            <div className="hidden lg:block w-full xl:w-[120%] lg:w-[110%] h-auto overflow-hidden">
 
-                <div className="lg:max-h-[30rem] object-center">
+                <div className="lg:max-h-[30rem] object-center flex items-center">
                     {/* test carousel */}
                     <img className="" src={testImg} alt="" />
                 </div>
@@ -58,8 +58,8 @@ function Work(props) {
                         return <div className="group" tabIndex={data.num}>
                             {/* heading */}
                             <div className="flex justify-between mb-2 cursor-pointer">
-                                <h3 className="font-medium text-xl text-lightGray group-hover:text-black duration-300">{data.heading}</h3>
-                                <svg class="bi arrow-down lg:w-6 w-5 duration-300 group-hover:fill-black fill-lightGray group-focus:-rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                <h3 className="font-medium text-xl text-lightGray group-focus:text-black group-hover:text-black duration-300">{data.heading}</h3>
+                                <svg class="bi arrow-down lg:w-6 w-5 duration-300 group-focus:fill-black group-hover:fill-black fill-lightGray group-focus:-rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                 </svg>
                             </div>
