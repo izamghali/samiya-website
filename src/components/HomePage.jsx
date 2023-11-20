@@ -16,7 +16,7 @@ function HomePage(props) {
             <Work/>
             <Team/>
             <About />
-            {/* <CheckGallery /> */}
+            <CheckGallery />
             <Client/>
             <Footer />
         </div>
