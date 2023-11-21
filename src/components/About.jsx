@@ -1,7 +1,7 @@
 import React from "react";
-import bg1 from '../assets/bg-img/food-84.webp';
-import bg2 from '../assets/bg-img/food-135.webp';
-import bg3 from '../assets/bg-img/food-100.webp';
+import bg1 from '../assets/check-gallery/food-84.webp';
+import bg2 from '../assets/check-gallery/food-135.webp';
+import bg3 from '../assets/check-gallery/food-100.webp';
 
 function About(props) {
     return (

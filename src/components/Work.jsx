@@ -39,12 +39,10 @@ function Work(props) {
             
             {/* carousel container */}
             <div className="hidden lg:block w-full xl:w-[120%] lg:w-[110%] h-auto overflow-hidden">
-
                 <div className="lg:max-h-[30rem] object-center flex items-center">
                     {/* test carousel */}
                     <img className="" src={testImg} alt="" />
                 </div>
-
             </div>
 
             {/* content container */}
