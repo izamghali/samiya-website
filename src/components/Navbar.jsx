@@ -139,7 +139,6 @@ function Navbar(props) {
                         >
                         Contact Us
                     </button> 
-
                 </div>
 
                 {/* Hamburger Toggle Container */}
@@ -158,10 +157,10 @@ function Navbar(props) {
                     hidden lg:hidden flex-col fixed left-0 top-0 px-8 z-20 items-end
                     self-end w-full min-h-screen pt-40
                     gap-3 text-lg text-white bg-[rgba(0,0,0,0.6)]">
-                <a onClick={displayHomePage} href="#" class="w-fit">About</a>
-                <a onClick={displayHomePage} href="#" class="w-fit">Our Services</a>
-                <a onClick={displayGallery} href="#" class="w-fit">Gallery</a>
-                <a onClick={displayHomePage} href="#" class="w-fit">How We Work</a>
+                <a onClick={displayHomePage} href="#about" class="w-fit">About</a>
+                <a onClick={displayHomePage} href="#service" class="w-fit">Our Services</a>
+                <a onClick={displayGallery} class="w-fit">Gallery</a>
+                <a onClick={displayHomePage} href="#work" class="w-fit">How We Work</a>
                 <a class="w-fit" id="contact-btn" onClick={handleContact}>Contact Us</a>
             </div>
         </nav>
