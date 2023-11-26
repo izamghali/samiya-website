@@ -33,7 +33,8 @@
         @apply flex 
         border-[1.5px] border-black
         justify-center items-center
-        w-fit p-4 rounded-full 
+        p-4 rounded-full 
+        sm:w-14 sm:h-14 md:w-fit md:h-fit
         md:hover:bg-stone-950 duration-300;
     }
 
