@@ -46,12 +46,12 @@ function ContactPage(props) {
             {/* bottom */}
             <div className="flex flex-col md:flex-row gap-8">
                 <div className="flex flex-col gap-6 w-full">
-                    <h2 className="lg:text-4xl sm:text-3xl text-2xl">For Information, call us or find our office at:</h2>
+                    <h2 className="lg:text-4xl xl:text-5xl md:text-3xl text-2xl">For Information, call us or find our office at:</h2>
                     <div className="flex flex-col md:flex-col sm:flex-row gap-4">
                         {/* address */}
                         <div>
                             <p className="text-xl">Samiya Studio</p>
-                            <p className="md:font-normal font-light">Perumahan Tirta Mas, No B6, RT/04 RW/07, Kel. Sinduadi, Kec Mlati, Sleman, Yogyakarta</p>
+                            <p className="md:font-normal font-light text-stone-500">Perumahan Tirta Mas, No B6, RT/04 RW/07, Kel. Sinduadi, Kec Mlati, Sleman, Yogyakarta</p>
                         </div>
                         {/* social */}
                         <div className="flex flex-row gap-4">
@@ -71,27 +71,27 @@ function ContactPage(props) {
                 <form action="" className="md:w-3/4 w-full sm:flex flex-col gap-4 hidden">
                     <div className="flex gap-4">
                         <div className="w-full">
-                            <label htmlFor="name">Your Name</label>
+                            <label className="form-label" htmlFor="name">Your Name</label>
                             <input className="input" type="text" name="name" id="" placeholder="Type your name"/>
                         </div>
                         <div className="w-full">
-                            <label htmlFor="email">Your Email</label>
+                            <label className="form-label" htmlFor="email">Your Email</label>
                             <input className="input" type="email" name="email" id="" placeholder="example@email.com"/>
                         </div>
                     </div>
                     <div className="flex gap-4">
                         <div className="w-full">
-                            <label htmlFor="phone">Phone</label>
+                            <label className="form-label" htmlFor="phone">Phone</label>
                             <input className="input" type="number" name="phone" id="" placeholder="082238976xxx"/>
                         </div>
                         <div className="w-full">
-                            <label htmlFor="insta">Instagram</label>
+                            <label className="form-label" htmlFor="insta">Instagram</label>
                             <input className="input" type="text" name="insta" id="" placeholder="@samiyastudio_"/>
                         </div>
                     </div>
                     <div className="flex flex-col gap-4">
                         <div>
-                            <label htmlFor="need">Tell us what you need</label>
+                            <label className="form-label" htmlFor="need">Tell us what you need</label>
                             <input className="input" type="text" name="need" id="" placeholder="How do I order a professional photo shoot session?"/>
                         </div>
                         <input className="border-2 border-black p-2 rounded-md bg-black text-white md:hover:bg-stone-50 md:hover:text-stone-950 cursor-pointer duration-300"  type="submit" value="Submit" />
