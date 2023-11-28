@@ -42,9 +42,9 @@ function Footer(props) {
 
                     {/* icon container */}
                     <div className="flex flex-row gap-4">
-                        {socialData.map(data => {
-                            return <a className="icon-link group" target="_blank" href={data.link}>
-                                <svg class="bi w-5 icon-link-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                        {socialData.map((data, index) => {
+                            return <a className="icon-link group" target="_blank" href={data.link} key={index}>
+                                <svg className="bi w-5 icon-link-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                     <path d={data.svg}/>
                                 </svg>
                             </a>

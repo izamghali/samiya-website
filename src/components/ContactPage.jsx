@@ -55,11 +55,11 @@ function ContactPage(props) {
                         </div>
                         {/* social */}
                         <div className="flex flex-row gap-4">
-                            {socialData.map(data => {
-                                return <a className="icon-link group" target="_blank" href={data.link}>
-                                    <svg class="bi w-5 md:w-7 icon-link-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                                        {data.path.map(path => {
-                                            return <path d={path}/>
+                            {socialData.map((data, indexOne) => {
+                                return <a className="icon-link group" target="_blank" href={data.link} key={indexOne}>
+                                    <svg className="bi w-5 md:w-7 icon-link-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                        {data.path.map((path, indexTwo) => {
+                                            return <path d={path} key={indexTwo}/>
                                         })}
                                     </svg>
                                 </a>

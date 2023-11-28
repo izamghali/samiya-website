@@ -25,10 +25,10 @@ function CheckGallery(props) {
             {/* images container */}
             <div className="absolute top-0 -left-36 hidden lg:flex space-x-[-13rem] z-10">
                 
-                { imgArr.map(data => {
+                { imgArr.map((data, index) => {
                     return <div className="w-[40rem] rotate-[82deg] overflow-hidden 
-                            blur-[1.5px] hover:blur-0 duration-700">
-                        <img className="w-full h-full -rotate-[82deg] hover:scale-105 duration-700" src={data} alt="" />
+                            blur-[1.5px] hover:blur-0 duration-700" key={index}>
+                        <img className="w-full h-full -rotate-[82deg] hover:scale-105 duration-700" src={data} alt="" key={index} />
                     </div>
                 })}
 
@@ -42,7 +42,7 @@ function CheckGallery(props) {
             group lg:hover:px-5 lg:hover:bg-white lg:hover:text-black
             lg:active:px-5 lg:active:bg-white lg:active:text-black
             ">  Check <span className="font-semibold lg:group-hover:tracking-wider duration-200 lg:group-hover:text-black text-white group-active:text-black group-active:tracking-wider">Gallery</span>
-                <svg class="bi bi-chevron-double-right w-5 h-5 fill-white lg:group-hover:fill-black lg:group-hover:translate-x-2 group-active:fill-black group-active:translate-x-2 duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <svg className="bi bi-chevron-double-right w-5 h-5 fill-white lg:group-hover:fill-black lg:group-hover:translate-x-2 group-active:fill-black group-active:translate-x-2 duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
                     <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
                 </svg>

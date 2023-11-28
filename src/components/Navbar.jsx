@@ -2,7 +2,9 @@ import React from "react"
 
 function Navbar(props) {
 
-    const { page, setPage } = props;
+    const {
+        setPage, setCategory, 
+    } = props;
 
     function handleNavbarToggle() {
         const btn = document.getElementById('menu-btn');
@@ -31,6 +33,11 @@ function Navbar(props) {
 
     function displayHomePage() { setPage(false) }
     function displayGallery() { setPage(true) }
+
+    function handleGallery(event) {
+        displayGallery();
+        setCategory(event.target.innerHTML)
+    }
 
     return (
         <nav className="snap-start bg-stone-50 dark:bg-stone-950 toggle-padding text-white">
@@ -97,7 +104,7 @@ function Navbar(props) {
                     <a onClick={displayHomePage} href="#service" >Our Services</a>
                     <button className="relative flex items-center gap-1" onClick={handleDropDown} id="drop-down">
                         Gallery
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                         </svg>
 
@@ -119,9 +126,9 @@ function Navbar(props) {
                                 border-2 border-white bg-black text-white 
                                 hidden flex-col items-start py-2 space-y-2 rounded-lg w-32
                             ">
-                            <a onClick={displayGallery} className="hover:bg-stone-400 w-full text-left py-1 px-2">Food</a>
-                            <a onClick={displayGallery} className="hover:bg-stone-400 w-full text-left py-1 px-2">Fashion</a>
-                            <a onClick={displayGallery} className="hover:bg-stone-400 w-full text-left py-1 px-2">Product</a>
+                            <button onClick={handleGallery} className="hover:bg-stone-400 w-full text-left py-1 px-2">Food</button>
+                            <button onClick={handleGallery} className="hover:bg-stone-400 w-full text-left py-1 px-2">Fashion</button>
+                            <button onClick={handleGallery} className="hover:bg-stone-400 w-full text-left py-1 px-2">Product</button>
                         </div>
                     </button>
 
@@ -142,26 +149,26 @@ function Navbar(props) {
                 </div>
 
                 {/* Hamburger Toggle Container */}
-                <div class="lg:hidden fixed top-0 right-0 z-30 toggle-padding" onClick={handleNavbarToggle}>
-                    <button class="hamburger lg:hidden focus:outline-none flex flex-col" id="menu-btn" type="button">
-                        <span class="stripes hamburger-top"></span>
-                        <span class="stripes hamburger-middle"></span>
-                        <span class="stripes hamburger-bottom"></span>
+                <div className="lg:hidden fixed top-0 right-0 z-30 toggle-padding" onClick={handleNavbarToggle}>
+                    <button className="hamburger lg:hidden focus:outline-none flex flex-col" id="menu-btn" type="button">
+                        <span className="stripes hamburger-top"></span>
+                        <span className="stripes hamburger-middle"></span>
+                        <span className="stripes hamburger-bottom"></span>
                     </button>
                 </div>
 
             </div>
 
             <div id="menu" 
-                class="font-mont
+                className="font-mont
                     hidden lg:hidden flex-col fixed left-0 top-0 px-8 z-20 items-end
                     self-end w-full min-h-screen pt-40
                     gap-3 text-lg text-white bg-[rgba(0,0,0,0.6)]">
-                <a onClick={displayHomePage} href="#about" class="w-fit">About</a>
-                <a onClick={displayHomePage} href="#service" class="w-fit">Our Services</a>
-                <a onClick={displayGallery} class="w-fit">Gallery</a>
-                <a onClick={displayHomePage} href="#work" class="w-fit">How We Work</a>
-                <a class="w-fit" id="contact-btn" onClick={handleContact}>Contact Us</a>
+                <a onClick={displayHomePage} href="#about" className="w-fit">About</a>
+                <a onClick={displayHomePage} href="#service" className="w-fit">Our Services</a>
+                <a onClick={displayGallery} className="w-fit">Gallery</a>
+                <a onClick={displayHomePage} href="#work" className="w-fit">How We Work</a>
+                <a className="w-fit" id="contact-btn" onClick={handleContact}>Contact Us</a>
             </div>
         </nav>
     )

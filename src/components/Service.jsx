@@ -33,7 +33,7 @@ function Service(props) {
             <div className="lg:snap-none snap-y snap-proximity flex lg:flex-row flex-col justify-center xl:gap-8 gap-4 lg:gap-2 lg:justify-evenly xl:justify-center items-center">
 
                 {/* Card */}
-                {serviceData.map(data => {
+                {serviceData.map((data, index) => {
                     return <div className="
                                 border-2 border-darkGray rounded-lg 
                                 lg:w-[24rem] sm:max-w-full 
@@ -41,7 +41,9 @@ function Service(props) {
                                 flex flex-col lg:flex-col sm:flex-row
                                 gap-2 sm:gap-4 lg:gap-2 p-4 
                                 snap-start lg:snap-align-none
-                                ">
+                                "
+                                key={index}
+                            >
                                 <div className="relative flex items-center 
                                         lg:h-[20rem] lg:w-full 
                                         sm:h-[15rem] sm:w-[45rem] 
@@ -70,7 +72,7 @@ function Service(props) {
                                         lg:hover:bg-stone-950 lg:hover:text-stone-50
                                         lg:hover:-translate-y-2 group duration-300">
                                         Book Now
-                                        <svg class="bi bi-arrow-up-right lg:w-6 md:w-5 sm:w-5 w-6 fill-stone-950 lg:group-hover:fill-stone-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                        <svg className="bi bi-arrow-up-right lg:w-6 md:w-5 sm:w-5 w-6 fill-stone-950 lg:group-hover:fill-stone-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
                                         </svg>
                                     </a>
