@@ -7,7 +7,7 @@ import img3 from '../assets/check-gallery/food-135.webp';
 import img4 from '../assets/check-gallery/food-47.webp';
 import img5 from '../assets/check-gallery/food-87.jpg';
 
-function CheckGallery(props) {
+function CheckGallery({ setPage }) {
 
     const imgArr = [img1, img2, img3, img4, img5];
     const randomIndex = Math.floor(Math.random() * imgArr.length)
@@ -34,7 +34,7 @@ function CheckGallery(props) {
 
             </div>
 
-            <button className="
+            <button onClick={() => { setPage(true) }} className="
             flex items-center gap-1 cursor-pointer 
             border-[1px] border-white bg-[rgba(0,0,0,0.4)] text-white
             rounded-full py-2 px-4 h-fit

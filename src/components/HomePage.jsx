@@ -8,7 +8,7 @@ import Work from "./Work";
 import Footer from "./Footer";
 import CheckGallery from "./CheckGallery";
 
-function HomePage(props) {
+function HomePage({ setPage }) {
     return (
         <div className="">
             <Carousel/>
@@ -16,7 +16,7 @@ function HomePage(props) {
             <Work/>
             <Team/>
             <About />
-            <CheckGallery />
+            <CheckGallery setPage={setPage} />
             <Client/>
             <Footer />
         </div>

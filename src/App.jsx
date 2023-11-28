@@ -36,7 +36,7 @@ function App() {
         setCategory={setCategory} 
       />
 
-      { page ? <Gallery /> : <HomePage/> }
+      { page ? <Gallery /> : <HomePage setPage={setPage} /> }
       
     </div>
     </>
