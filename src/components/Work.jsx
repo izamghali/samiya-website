@@ -1,5 +1,5 @@
 import React from "react"
-import testImg from '../assets/how-we-work-carousel/food-90.webp';
+import testImg from '../assets/studio.webp';
 
 function Work(props) {
 
@@ -38,16 +38,18 @@ function Work(props) {
         <section className="white-cont md:flex" id="work">
             
             {/* carousel container */}
-            <div className="hidden lg:block w-full xl:w-[120%] lg:w-[110%] h-auto overflow-hidden">
-                <div className="lg:max-h-[30rem] object-center flex items-center">
+            {/* w-full xl:w-[120%] lg:w-[110%] h-auto overflow-hidden */}
+            <div className="hidden h-min lg:block lg:w-[110%] xl:w-[120%] overflow-hidden">
+                {/* lg:max-h-[30rem] object-center flex items-center */}
+                <div className="h-[28rem] flex items-center">
                     {/* test carousel */}
-                    <img className="" src={testImg} alt="" />
+                    <img className="h-full w-full object-cover object-right" src={testImg} alt="" />
                 </div>
             </div>
 
             {/* content container */}
             {/* NOTE:  cont */}
-            <div className="cont w-full"> 
+            <div className="py-10 px-4 md:px-8 sm:px-6 w-full"> 
                 <h2 className="margin-heading">How We Work</h2>
 
                 {/* container */}
@@ -67,7 +69,7 @@ function Work(props) {
                             <div className="h-0 group-focus:h-auto overflow-hidden">
                                 <div className="flex justify-between gap-1 lg:gap-4 -translate-y-full group-focus:-translate-y-0 duration-300">
                                     <p className="w-[80%] text-lightGray">{data.desc}</p>
-                                    <span className="">{data.duration}</span>
+                                    <span className="text-right">{data.duration}</span>
                                 </div>
                             </div>
                         </div>
