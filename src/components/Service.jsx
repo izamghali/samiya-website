@@ -1,7 +1,7 @@
 import React from "react"
-import img1 from '../assets/service-card/food-94.webp';
-import img2 from '../assets/service-card/fashion-9.webp';
-import img3 from '../assets/service-card/product-8.webp';
+import img1 from '../assets/gallery/food/selected/food-128.webp';
+import img2 from '../assets/gallery/fashion/fashion-20.webp';
+import img3 from '../assets/gallery/product/product-4.webp';
 
 function Service(props) {
 
