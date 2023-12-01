@@ -64,7 +64,7 @@
         @apply font-mont;
     }
 
-    h2 {
+    h2 { 
         @apply text-3xl font-semibold;
     }
 

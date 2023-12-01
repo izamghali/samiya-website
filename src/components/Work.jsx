@@ -1,5 +1,5 @@
 import React from "react"
-import testImg from '../assets/studio.webp';
+import testImg from '../assets/studio-crop.jpg';
 
 function Work(props) {
 
@@ -35,43 +35,46 @@ function Work(props) {
     ]
 
     return (
-        <section className="white-cont md:flex" id="work">
+        <section className="white-cont md:flex lg:h-screen" id="work">
             
             {/* carousel container */}
-            {/* w-full xl:w-[120%] lg:w-[110%] h-auto overflow-hidden */}
-            <div className="hidden h-min lg:block lg:w-[110%] xl:w-[120%] overflow-hidden">
+            {/* type 1: w-full xl:w-[120%] lg:w-[110%] h-auto overflow-hidden */}
+            {/* type 2 : h-min lg:block lg:w-[110%] xl:w-[120%] */}
+            <div className="hidden h-auto lg:block overflow-hidden">
                 {/* lg:max-h-[30rem] object-center flex items-center */}
-                <div className="h-[28rem] flex items-center">
+                <div className="lg:h-full xl:h-auto">
                     {/* test carousel */}
-                    <img className="h-full w-full object-cover object-right" src={testImg} alt="" />
+                    <img className="lg:h-full xl:h-auto object-cover object-right" src={testImg} alt="" />
                 </div>
             </div>
 
             {/* content container */}
             {/* NOTE:  cont */}
-            <div className="py-10 px-4 md:px-8 sm:px-6 w-full"> 
+            <div className="py-10 px-4 md:px-8 sm:px-6 lg:min-w-[25rem]"> 
                 <h2 className="margin-heading">How We Work</h2>
 
                 {/* container */}
                 <div className="flex flex-col justify-between h-max gap-4">
                     {workData.map((data, index) => {
-                        return <div className="group" tabIndex={data.num} key={index}>
-                            {/* heading */}
-                            <div className="flex justify-between mb-2 cursor-pointer">
-                                <h3 className="font-medium text-xl text-lightGray group-focus:text-black group-hover:text-black duration-300">{data.heading}</h3>
-                                <svg className="bi arrow-down lg:w-6 w-5 duration-300 group-focus:fill-black group-hover:fill-black fill-lightGray group-focus:-rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                                </svg>
-                            </div>
-                            <div className="h-[1px] w-full bg-darkGray"></div>
+                        return <div className=" flex items-center p-2 gap-2 rounded-lg" key={index}>
 
-                            {/* body */}
-                            <div className="h-0 group-focus:h-auto overflow-hidden">
-                                <div className="flex justify-between gap-1 lg:gap-4 -translate-y-full group-focus:-translate-y-0 duration-300">
-                                    <p className="w-[80%] text-lightGray">{data.desc}</p>
-                                    <span className="text-right">{data.duration}</span>
+                            {/* svg icon */}
+                            {/* <div className="border-2 border-lightGray p-2 rounded-full sm:block hidden">
+                                <svg class="bi bi-gear-fill fill-lightGray w-6 lg:w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                    {data.path.map(path => {
+                                        return <path d={path}/>
+                                    })}
+                                </svg>
+                            </div> */}
+
+                            <div className="w-full">
+                                <div className="flex justify-between w-full border-b-[1.5px] border-stone-400">
+                                    <h3 className="font-medium text-xl">{data.heading}</h3>
+                                    <span className="font-light ">{data.duration}</span>
                                 </div>
+                                <p className="font-extralight text-lightGray">{data.desc}</p>
                             </div>
+
                         </div>
                     })}
                 </div>
