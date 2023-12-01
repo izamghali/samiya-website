@@ -25,9 +25,11 @@ function Service(props) {
     ]
 
     return (
-        <section className="cont black-cont" id="service">
-            <h2 className="text-center text-white">Our Photography Services</h2>
-            <p className="text-center font-mont margin-heading text-darkGray lg:text-lg">Capture Moments with Samiya Studio</p>
+        <section className="lg:py-10 lg:h-screen cont black-cont flex flex-col justify-between xl:justify-evenly" id="service">
+            <div>
+                <h2 className="text-center text-white">Our Photography Services</h2>
+                <p className="text-center font-mont margin-heading text-darkGray lg:text-lg">Capture Moments with Samiya Studio</p>
+            </div>
 
             {/* Card Container */}
             <div className="lg:snap-none snap-y snap-proximity flex lg:flex-row flex-col justify-center xl:gap-8 gap-4 lg:gap-2 lg:justify-evenly xl:justify-center items-center">

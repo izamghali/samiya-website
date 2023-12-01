@@ -40,13 +40,13 @@ function Client(props) {
     
     return (
         <section className="cont white-cont">
-            <h2 className="text-center md:text-left margin-heading">Our Clients</h2>
+            <h2 className="text-center margin-heading">Our Clients</h2>
             
             {/* grid container */}
             <div className="grid md:grid-cols-4 lg:grid-cols-6 sm:grid-cols-3 grid-cols-2 gap-y-4 gap-x-4">
                 
                 {clients.map((data, index) => {
-                    return <div className=" w-fit justify-self-center md:justify-self-start" key={index}>
+                    return <div className="w-36 justify-self-center " key={index}>
                         <img src={data} alt="" />
                     </div>
                 })}
