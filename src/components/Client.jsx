@@ -39,7 +39,7 @@ function Client(props) {
     shuffle(clients)
     
     return (
-        <section className="cont white-cont">
+        <section className="cont white-cont lg:h-screen">
             <h2 className="text-center margin-heading">Our Clients</h2>
             
             {/* grid container */}
