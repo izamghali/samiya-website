@@ -64,8 +64,8 @@ function Team(props) {
                             <div className="
                                 group-hover:md:translate-x-0 -translate-x-[100%] md:-translate-x-[100%]
                                 flex-col group-hover:opacity-100 opacity-30
-                                absolute bottom-0 bg-[rgba(0,0,0,0.6)] p-4 rounded-tr-lg w-fit min-w-[10rem]
-                                duration-300 border-2 rounded-bl-lg border-t-0 border-r-0 border-white z-30
+                                absolute bottom-0 bg-[rgba(0,0,0,0.55)] p-4 rounded-tr-lg w-fit min-w-[10rem]
+                                duration-300 rounded-bl-lg border-t-0 border-r-0 z-30
                                 items-start">
                                     <div className="flex justify-between w-full">
                                         <h3 className=" text-white text-xl font-semibold tracking-wider">{data.shortName}</h3>
