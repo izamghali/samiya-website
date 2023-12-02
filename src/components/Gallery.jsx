@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { shuffle } from "../helpers.js";
 import test1 from "../assets/gallery-test/test-1.webp"
 import test2 from "../assets/gallery-test/test-2.webp"
@@ -10,22 +10,44 @@ import test7 from "../assets/gallery-test/test-7.webp"
 import test8 from "../assets/gallery-test/test-8.webp"
 
 function Gallery(props) {
+    
+    // const {
+    //     category,
+    // } = props;
 
-    const photos = [test1, test2, test3, test4, test5, test6, test7, test8]
-    // grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
+    const [ clickedPhoto, setClickedPhoto ] = useState([])
+    
+    const images = [
+        { src: test1, cat: 'Fashion' },
+        { src: test2, cat: 'Fashion' },
+        { src: test3, cat: 'Food' },
+        { src: test4, cat: 'Food' },
+        { src: test5, cat: 'Food' },
+        { src: test6, cat: 'Food' },
+        { src: test7, cat: 'Product' },
+        { src: test8, cat: 'Product' },
+    ]
 
-    shuffle(photos);
+    // const [ filteredImages, setFilteredImages ] = useState(images)
 
-    let clickedPhoto = '';
+    // useEffect(() => {
+    //     console.log(category);
+    //     if (category) {
+    //         setFilteredImages(images.filter(img => { img.cat === category }))
+    //     } else {
+    //         setFilteredImages(images.filter(img => { img.cat === category }))
+    //     }
+    // }, [category])
 
-    const layer = document.getElementById('layer');
     function showImage(event) {
-        const clicked = event.target;
+        const layer = document.getElementById('layer');
+        const clicked = event.target.src
+        setClickedPhoto(prevPhotos => [clicked])
 
         layer.classList.add('flex')
         layer.classList.remove('hidden')
         
-        setTimeout(() => {
+        setTimeout(() => { // smooth layer fade-in
             layer.classList.add('opacity-100')
             layer.classList.remove('opacity-0')
         }, 50)
@@ -50,25 +72,26 @@ function Gallery(props) {
                 <div className="mb-6">
                     {/* a tag container */}
                     <div className="flex gap-8 sm:gap-10 flex-row-reverse md:flex-row">
-                        <a className="uppercase text-accent" href="">Food</a>
-                        <a className="uppercase text-accent" href="">Fashion</a>
-                        <a className="uppercase text-accent" href="">Product</a>
+                        <button className="uppercase text-accent">Food</button>
+                        <button className="uppercase text-accent">Fashion</button>
+                        <button className="uppercase text-accent">Product</button>
                     </div>
                     {/* drop down */}
                 </div>
 
                 <div className="columns-1 lg:columns-3 sm:columns-2 gap-x-6 space-y-6">
-                    {photos.map(photo => {
-                        return <div className="overflow-hidden group cursor-pointer" onClick={showImage}>
-                            <img className="group-hover:scale-110 duration-300" src={photo} alt="" />
+                    { images.map((photo, index) => {
+                        return <div className="overflow-hidden group cursor-pointer" onClick={showImage} key={index}>
+                            <img className="group-hover:scale-110 duration-300" src={photo.src} alt="" name={photo.cat} />
                         </div>
                     })}
                 </div>
 
                 <div className="fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)] hidden justify-center items-center duration-500" onClick={hideImage} id="layer">
-                    <div className="bg-white p-2">
-                        photo preview feature is still in development! 
-                        {/* <img src={clickedPhoto} alt="" /> */}
+                    <div className="">
+                        {clickedPhoto.map((photo, index) => {
+                            return <img className="mx-auto max-w-[90%] max-h-[40rem] lg:max-h-[47rem]" src={photo} key={index}/>
+                        })}
                     </div>
                 </div>
             </div>
