@@ -8,6 +8,7 @@ import ContactPage from './components/ContactPage'
 // FIXME: key for each component we're mapping
 // FIXME: check react dom client error on the console
 // FIXME: responsive font-size for h2
+// FIXME: Scroll function on navbar
 
 function App() {
 

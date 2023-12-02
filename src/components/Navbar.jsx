@@ -126,9 +126,9 @@ function Navbar(props) {
                                 border-2 border-white bg-black text-white 
                                 hidden flex-col items-start py-2 space-y-2 rounded-lg w-32
                             ">
-                            <button onClick={handleGallery} className="hover:bg-stone-400 w-full text-left py-1 px-2">Food</button>
-                            <button onClick={handleGallery} className="hover:bg-stone-400 w-full text-left py-1 px-2">Fashion</button>
-                            <button onClick={handleGallery} className="hover:bg-stone-400 w-full text-left py-1 px-2">Product</button>
+                            <a onClick={handleGallery} className="hover:bg-stone-400 w-full text-left py-1 px-2">Food</a>
+                            <a onClick={handleGallery} className="hover:bg-stone-400 w-full text-left py-1 px-2">Fashion</a>
+                            <a onClick={handleGallery} className="hover:bg-stone-400 w-full text-left py-1 px-2">Product</a>
                         </div>
                     </button>
 
