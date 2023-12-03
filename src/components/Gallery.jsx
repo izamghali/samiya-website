@@ -15,8 +15,6 @@ function Gallery(props) {
     //     category,
     // } = props;
 
-    const [ clickedPhoto, setClickedPhoto ] = useState([])
-    
     const images = [
         { src: test1, cat: 'Fashion' },
         { src: test2, cat: 'Fashion' },
@@ -28,20 +26,22 @@ function Gallery(props) {
         { src: test8, cat: 'Product' },
     ]
 
-    // const [ filteredImages, setFilteredImages ] = useState(images)
+    const [ clickedPhoto, setClickedPhoto ] = useState([])
+    const [ clickedCategory, setClickedCategory ] = useState('')
+    const [ filteredImages, setFilteredImages ] = useState(images)
 
-    // useEffect(() => {
-    //     console.log(category);
-    //     if (category) {
-    //         setFilteredImages(images.filter(img => { img.cat === category }))
-    //     } else {
-    //         setFilteredImages(images.filter(img => { img.cat === category }))
-    //     }
-    // }, [category])
+    useEffect(() => {
+        if (clickedCategory) {
+            setFilteredImages(images.filter(image => image.cat === clickedCategory ))
+        } else {
+            setFilteredImages(images)
+        }
+    }, [clickedCategory])
 
     function showImage(event) {
         const layer = document.getElementById('layer');
         const clicked = event.target.src
+        console.log(clicked)
         setClickedPhoto(prevPhotos => [clicked])
 
         layer.classList.add('flex')
@@ -64,6 +64,15 @@ function Gallery(props) {
         }, 400) 
     }
 
+    function clickedFilter(event) {
+        const category = event.target.innerHTML
+        if (category === clickedCategory) {
+            setClickedCategory('')
+        } else {
+            setClickedCategory(category)
+        }
+    }
+
     return (
         <section className="cont black-cont pt-0">
 
@@ -72,15 +81,15 @@ function Gallery(props) {
                 <div className="mb-6">
                     {/* a tag container */}
                     <div className="flex gap-8 sm:gap-10 flex-row-reverse md:flex-row">
-                        <button className="uppercase text-accent">Food</button>
-                        <button className="uppercase text-accent">Fashion</button>
-                        <button className="uppercase text-accent">Product</button>
+                        <button onClick={clickedFilter} className="uppercase text-accent">Food</button>
+                        <button onClick={clickedFilter} className="uppercase text-accent">Fashion</button>
+                        <button onClick={clickedFilter} className="uppercase text-accent">Product</button>
                     </div>
                     {/* drop down */}
                 </div>
 
                 <div className="columns-1 lg:columns-3 sm:columns-2 gap-x-6 space-y-6">
-                    { images.map((photo, index) => {
+                    { filteredImages.map((photo, index) => {
                         return <div className="overflow-hidden group cursor-pointer" onClick={showImage} key={index}>
                             <img className="group-hover:scale-110 duration-300" src={photo.src} alt="" name={photo.cat} />
                         </div>
