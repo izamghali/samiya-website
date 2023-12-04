@@ -41,7 +41,6 @@ function Gallery(props) {
     function showImage(event) {
         const layer = document.getElementById('layer');
         const clicked = event.target.src
-        console.log(clicked)
         setClickedPhoto(prevPhotos => [clicked])
 
         layer.classList.add('flex')
@@ -66,10 +65,17 @@ function Gallery(props) {
 
     function clickedFilter(event) {
         const category = event.target.innerHTML
-        if (category === clickedCategory) {
+        const filterBtns = document.querySelectorAll('.filter-btn')
+        
+        if (category === clickedCategory) { // all category
             setClickedCategory('')
-        } else {
+            filterBtns.forEach(btn => btn.classList.remove('text-accentLess'))
+            filterBtns.forEach(btn => btn.classList.add('text-accent'))
+
+        } else { // certain category
             setClickedCategory(category)
+            filterBtns.forEach(btn => btn.classList.remove('text-accent'))
+            filterBtns.forEach(btn => btn.classList.add('text-accentLess'))
         }
     }
 
@@ -81,9 +87,9 @@ function Gallery(props) {
                 <div className="mb-6">
                     {/* a tag container */}
                     <div className="flex gap-8 sm:gap-10 flex-row-reverse md:flex-row">
-                        <button onClick={clickedFilter} className="uppercase text-accent">Food</button>
-                        <button onClick={clickedFilter} className="uppercase text-accent">Fashion</button>
-                        <button onClick={clickedFilter} className="uppercase text-accent">Product</button>
+                        <button onClick={clickedFilter} className="filter-btn uppercase text-accent focus:text-accent duration-300">Food</button>
+                        <button onClick={clickedFilter} className="filter-btn uppercase text-accent focus:text-accent duration-300">Fashion</button>
+                        <button onClick={clickedFilter} className="filter-btn uppercase text-accent focus:text-accent duration-300">Product</button>
                     </div>
                     {/* drop down */}
                 </div>
