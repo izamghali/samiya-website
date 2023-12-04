@@ -11,7 +11,7 @@ import test8 from "../assets/gallery-test/test-8.webp"
 
 function Gallery(props) {
     
-    const { clickedCategory, setClickedCategory } = props;
+    const { clickedCategory, setClickedCategory, } = props;
 
     const images = [
         { src: test1, cat: 'Fashion' },
@@ -73,7 +73,7 @@ function Gallery(props) {
             setClickedCategory(event.target.innerHTML)
             filterBtns.forEach(btn => btn.classList.remove('text-accent'))
             filterBtns.forEach(btn => btn.classList.add('text-accentLess'))
-        }
+        } 
     }
 
     return (
@@ -84,9 +84,9 @@ function Gallery(props) {
                 <div className="mb-6">
                     {/* a tag container */}
                     <div className="flex gap-8 sm:gap-10 flex-row-reverse md:flex-row">
-                        <button onClick={clickedFilter} className="filter-btn uppercase text-accentLess focus:text-accent duration-300">Food</button>
-                        <button onClick={clickedFilter} className="filter-btn uppercase text-accentLess focus:text-accent duration-300">Fashion</button>
-                        <button onClick={clickedFilter} className="filter-btn uppercase text-accentLess focus:text-accent duration-300">Product</button>
+                        <button onClick={clickedFilter} className="filter-btn uppercase text-accent focus:text-accent duration-300">Food</button>
+                        <button onClick={clickedFilter} className="filter-btn uppercase text-accent focus:text-accent duration-300">Fashion</button>
+                        <button onClick={clickedFilter} className="filter-btn uppercase text-accent focus:text-accent duration-300">Product</button>
                     </div>
                     {/* drop down */}
                 </div>

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Carousel from "./Carousel";
 import About from "./About";
 import Service from "./Service";
@@ -8,7 +8,12 @@ import Work from "./Work";
 import Footer from "./Footer";
 import CheckGallery from "./CheckGallery";
 
-function HomePage({ setPage }) {
+function HomePage({ setPage, setClickedCategory }) {
+
+    useEffect(() => {
+        setClickedCategory('')
+    })
+
     return (
         <div className="">
             <Carousel/>

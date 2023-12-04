@@ -35,10 +35,10 @@ function App() {
 
       { page ? 
         <Gallery 
-          clickedCategory={clickedCategory} 
-          setClickedCategory={setClickedCategory}
+          page={page} setPage={setPage}
+          clickedCategory={clickedCategory} setClickedCategory={setClickedCategory}
         /> 
-        : <HomePage setPage={setPage} /> 
+        : <HomePage setPage={setPage} setClickedCategory={setClickedCategory} /> 
       }
       
     </div>
