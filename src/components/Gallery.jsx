@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { shuffle } from "../helpers.js";
+import { shuffle, filterTextColorChange } from "../helpers.js";
 import test1 from "../assets/gallery-test/test-1.webp"
 import test2 from "../assets/gallery-test/test-2.webp"
 import test3 from "../assets/gallery-test/test-3.webp"
@@ -68,12 +68,12 @@ function Gallery(props) {
             setClickedCategory('')
             filterBtns.forEach(btn => btn.classList.remove('text-accentLess'))
             filterBtns.forEach(btn => btn.classList.add('text-accent'))
-      
         } else { 
             setClickedCategory(event.target.innerHTML)
-            filterBtns.forEach(btn => btn.classList.remove('text-accent'))
-            filterBtns.forEach(btn => btn.classList.add('text-accentLess'))
+            filterTextColorChange(event)
         } 
+
+        
     }
 
     return (
@@ -84,9 +84,9 @@ function Gallery(props) {
                 <div className="mb-6">
                     {/* a tag container */}
                     <div className="flex gap-8 sm:gap-10 flex-row-reverse md:flex-row">
-                        <button onClick={clickedFilter} className="filter-btn uppercase text-accent focus:text-accent duration-300">Food</button>
-                        <button onClick={clickedFilter} className="filter-btn uppercase text-accent focus:text-accent duration-300">Fashion</button>
-                        <button onClick={clickedFilter} className="filter-btn uppercase text-accent focus:text-accent duration-300">Product</button>
+                        <button onClick={clickedFilter} className="filter-btn uppercase text-accent duration-300">Food</button>
+                        <button onClick={clickedFilter} className="filter-btn uppercase text-accent duration-300">Fashion</button>
+                        <button onClick={clickedFilter} className="filter-btn uppercase text-accent duration-300">Product</button>
                     </div>
                     {/* drop down */}
                 </div>

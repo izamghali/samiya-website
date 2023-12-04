@@ -15,3 +15,16 @@ export function shuffle(array) {
   
     return array;
 }
+
+export function filterTextColorChange(event) {
+  const filterBtns = document.querySelectorAll('.filter-btn')
+  filterBtns.forEach(btn => {
+    if (btn.innerHTML === event.target.innerHTML) {
+        btn.classList.remove('text-accentLess')
+        btn.classList.add('text-accent')
+    } else {
+        btn.classList.add('text-accentLess')
+        btn.classList.remove('text-accent')
+    }
+  })
+}

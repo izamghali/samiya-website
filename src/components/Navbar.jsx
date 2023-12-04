@@ -1,4 +1,5 @@
 import React from "react"
+import { filterTextColorChange } from "../helpers";
 
 function Navbar(props) {
 
@@ -40,16 +41,7 @@ function Navbar(props) {
         setClickedCategory(category)
         
         setTimeout(() => {
-            const filterBtns = document.querySelectorAll('.filter-btn')
-            filterBtns.forEach(btn => {
-                if (btn.innerHTML === category) {
-                    btn.classList.remove('text-accentLess')
-                    btn.classList.add('text-accent')
-                } else {
-                    btn.classList.add('text-accentLess')
-                    btn.classList.remove('text-accent')
-                }
-            })
+            filterTextColorChange(event)
         }, 1)
     }
 
