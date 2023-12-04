@@ -127,7 +127,7 @@ function Navbar(props) {
                         {/* FIX:  add transition to dropdown */}
                         <div 
                             id="drop-down-menu" 
-                            className="
+                            className="z-10
                                 absolute -bottom-36 right-0
                                 border-2 border-white bg-black text-white 
                                 hidden flex-col items-start py-2 space-y-2 rounded-lg w-32
