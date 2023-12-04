@@ -14,11 +14,11 @@ function Carousel(props) {
         },
         {
             src: carousel2,
-            hash: "LEAvd%0g58}?E3xDt6R.0N-oxsIq"
+            hash: "L9FY415?5TD%~Bt7T0RP0K8_xbxt"
         },
         {
             src: carousel3,
-            hash: "LEAvd%0g58}?E3xDt6R.0N-oxsIq"
+            hash: "L2D8|58_0I}t_#lo0{Mz000e]wL%"
         },
     ]
 
@@ -29,7 +29,7 @@ function Carousel(props) {
         const img = new Image()
         img.onload = () => { setImageLoaded(true) }
 
-        let index = 1
+        let index = 2
         
         const tl = gsap.timeline()
         setInterval(() => {
