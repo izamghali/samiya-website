@@ -3,7 +3,7 @@ import React from "react"
 function Navbar(props) {
 
     const {
-        setPage, setCategory, 
+        setPage, setClickedCategory,
     } = props;
 
     function handleNavbarToggle() {
@@ -35,8 +35,22 @@ function Navbar(props) {
     function displayGallery() { setPage(true) }
 
     function handleGallery(event) {
+        const category = event.target.innerHTML
         displayGallery();
-        setCategory(event.target.innerHTML)
+        setClickedCategory(category)
+        
+        setTimeout(() => {
+            const filterBtns = document.querySelectorAll('.filter-btn')
+            filterBtns.forEach(btn => {
+                if (btn.innerHTML === category) {
+                    btn.classList.remove('text-accentLess')
+                    btn.classList.add('text-accent')
+                } else {
+                    btn.classList.add('text-accentLess')
+                    btn.classList.remove('text-accent')
+                }
+            })
+        }, 1)
     }
 
     return (

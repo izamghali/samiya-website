@@ -11,9 +11,7 @@ import test8 from "../assets/gallery-test/test-8.webp"
 
 function Gallery(props) {
     
-    // const {
-    //     category,
-    // } = props;
+    const { clickedCategory, setClickedCategory } = props;
 
     const images = [
         { src: test1, cat: 'Fashion' },
@@ -27,7 +25,7 @@ function Gallery(props) {
     ]
 
     const [ clickedPhoto, setClickedPhoto ] = useState([])
-    const [ clickedCategory, setClickedCategory ] = useState('')
+    
     const [ filteredImages, setFilteredImages ] = useState(images)
 
     useEffect(() => {
@@ -64,16 +62,15 @@ function Gallery(props) {
     }
 
     function clickedFilter(event) {
-        const category = event.target.innerHTML
         const filterBtns = document.querySelectorAll('.filter-btn')
         
-        if (category === clickedCategory) { // all category
+        if (event.target.innerHTML === clickedCategory) {
             setClickedCategory('')
             filterBtns.forEach(btn => btn.classList.remove('text-accentLess'))
             filterBtns.forEach(btn => btn.classList.add('text-accent'))
-
-        } else { // certain category
-            setClickedCategory(category)
+      
+        } else { 
+            setClickedCategory(event.target.innerHTML)
             filterBtns.forEach(btn => btn.classList.remove('text-accent'))
             filterBtns.forEach(btn => btn.classList.add('text-accentLess'))
         }
@@ -87,13 +84,14 @@ function Gallery(props) {
                 <div className="mb-6">
                     {/* a tag container */}
                     <div className="flex gap-8 sm:gap-10 flex-row-reverse md:flex-row">
-                        <button onClick={clickedFilter} className="filter-btn uppercase text-accent focus:text-accent duration-300">Food</button>
-                        <button onClick={clickedFilter} className="filter-btn uppercase text-accent focus:text-accent duration-300">Fashion</button>
-                        <button onClick={clickedFilter} className="filter-btn uppercase text-accent focus:text-accent duration-300">Product</button>
+                        <button onClick={clickedFilter} className="filter-btn uppercase text-accentLess focus:text-accent duration-300">Food</button>
+                        <button onClick={clickedFilter} className="filter-btn uppercase text-accentLess focus:text-accent duration-300">Fashion</button>
+                        <button onClick={clickedFilter} className="filter-btn uppercase text-accentLess focus:text-accent duration-300">Product</button>
                     </div>
                     {/* drop down */}
                 </div>
 
+                {/* gallery */}
                 <div className="columns-1 lg:columns-3 sm:columns-2 gap-x-6 space-y-6">
                     { filteredImages.map((photo, index) => {
                         return <div className="overflow-hidden group cursor-pointer" onClick={showImage} key={index}>
@@ -101,11 +99,12 @@ function Gallery(props) {
                         </div>
                     })}
                 </div>
-
+                
+                {/* preview */}
                 <div className="fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)] hidden justify-center items-center duration-500" onClick={hideImage} id="layer">
                     <div className="">
                         {clickedPhoto.map((photo, index) => {
-                            return <img className="mx-auto max-w-[90%] max-h-[40rem] lg:max-h-[47rem]" src={photo} key={index}/>
+                            return <img className="mx-auto max-w-[90%] max-h-[45rem] lg:max-h-[50rem] xl:max-h-[55rem]" src={photo} key={index}/>
                         })}
                     </div>
                 </div>
