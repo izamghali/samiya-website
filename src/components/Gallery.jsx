@@ -19,9 +19,7 @@ import test16 from "../assets/gallery-test/test-16.webp"
 import test17 from "../assets/gallery-test/test-17.webp"
 import test18 from "../assets/gallery-test/test-18.webp"
 
-function Gallery(props) {
-    
-    const { clickedCategory, setClickedCategory, } = props;
+function Gallery({ clickedCategory, setClickedCategory }) {
 
     const images = [
         { src: test1, cat: 'Fashion' },
@@ -45,7 +43,6 @@ function Gallery(props) {
     ]
 
     const [ clickedPhoto, setClickedPhoto ] = useState([])
-    
     const [ filteredImages, setFilteredImages ] = useState(images)
 
     useEffect(() => {
@@ -63,8 +60,6 @@ function Gallery(props) {
 
         layer.classList.add('flex')
         layer.classList.remove('hidden')
-
-        console.log(event.target.loading);
         
         setTimeout(() => { // smooth layer fade-in
             layer.classList.add('opacity-100')
