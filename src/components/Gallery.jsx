@@ -8,6 +8,16 @@ import test5 from "../assets/gallery-test/test-5.webp"
 import test6 from "../assets/gallery-test/test-6.webp"
 import test7 from "../assets/gallery-test/test-7.webp"
 import test8 from "../assets/gallery-test/test-8.webp"
+import test9 from "../assets/gallery-test/test-9.webp"
+import test10 from "../assets/gallery-test/test-10.webp"
+import test11 from "../assets/gallery-test/test-11.webp"
+import test12 from "../assets/gallery-test/test-12.webp"
+import test13 from "../assets/gallery-test/test-13.webp"
+import test14 from "../assets/gallery-test/test-14.webp"
+import test15 from "../assets/gallery-test/test-15.webp"
+import test16 from "../assets/gallery-test/test-16.webp"
+import test17 from "../assets/gallery-test/test-17.webp"
+import test18 from "../assets/gallery-test/test-18.webp"
 
 function Gallery(props) {
     
@@ -16,12 +26,22 @@ function Gallery(props) {
     const images = [
         { src: test1, cat: 'Fashion' },
         { src: test2, cat: 'Fashion' },
-        { src: test3, cat: 'Food' },
-        { src: test4, cat: 'Food' },
-        { src: test5, cat: 'Food' },
+        { src: test3, cat: 'Fashion' },
+        { src: test4, cat: 'Fashion' },
+        { src: test5, cat: 'Fashion' },
         { src: test6, cat: 'Food' },
-        { src: test7, cat: 'Product' },
-        { src: test8, cat: 'Product' },
+        { src: test7, cat: 'Food' },
+        { src: test8, cat: 'Food' },
+        { src: test9, cat: 'Food' },
+        { src: test10, cat: 'Food' },
+        { src: test11, cat: 'Food' },
+        { src: test12, cat: 'Product' },
+        { src: test13, cat: 'Product' },
+        { src: test14, cat: 'Product' },
+        { src: test15, cat: 'Product' },
+        { src: test16, cat: 'Product' },
+        { src: test17, cat: 'Fashion' },
+        { src: test18, cat: 'Product' },
     ]
 
     const [ clickedPhoto, setClickedPhoto ] = useState([])
@@ -32,7 +52,7 @@ function Gallery(props) {
         if (clickedCategory) {
             setFilteredImages(images.filter(image => image.cat === clickedCategory ))
         } else {
-            setFilteredImages(images)
+            setFilteredImages(shuffle(images))
         }
     }, [clickedCategory])
 
@@ -43,6 +63,8 @@ function Gallery(props) {
 
         layer.classList.add('flex')
         layer.classList.remove('hidden')
+
+        console.log(event.target.loading);
         
         setTimeout(() => { // smooth layer fade-in
             layer.classList.add('opacity-100')
@@ -92,10 +114,11 @@ function Gallery(props) {
                 </div>
 
                 {/* gallery */}
-                <div className="columns-1 lg:columns-3 sm:columns-2 gap-x-6 space-y-6">
+                <div className="columns-1 lg:columns-3 sm:columns-2
+                    gap-x-6 space-y-6">
                     { filteredImages.map((photo, index) => {
                         return <div className="overflow-hidden group cursor-pointer" onClick={showImage} key={index}>
-                            <img className="group-hover:scale-110 duration-300" src={photo.src} alt="" name={photo.cat} />
+                            <img loading={index < 3 ? 'eager' : 'lazy'} className="group-hover:scale-110 duration-300" src={photo.src} alt="" name={photo.cat} />
                         </div>
                     })}
                 </div>
