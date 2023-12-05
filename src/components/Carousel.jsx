@@ -6,7 +6,7 @@ import { Blurhash } from "react-blurhash";
 import gsap from "gsap";
 import { encode } from "blurhash";
 
-let index = 0
+let index = 2
 
 function addIndex() {
     setInterval(() => {
@@ -21,9 +21,9 @@ function carouselLoading(bar, layer, fakeLayer, logo, line) {
     let mm = gsap.matchMedia();
 
     mm.add("(min-width: 976px)", () => {
-        tl.to(fakeLayer, { opacity: 0, duration: 2, })
-        tl.to(logo, { opacity: 1, duration: 1, y: '0%' })
-        tl.to(line, { opacity: 1, duration: 1, y: '0%' })
+        tl.to(fakeLayer, { opacity: 0, duration: 1, })
+        tl.to(logo, { opacity: 1, duration: 0.5, y: '0%' })
+        tl.to(line, { opacity: 1, duration: 0.5, y: '0%' })
         
     });
 
