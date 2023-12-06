@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { shuffle, filterTextColorChange } from "../helpers.js";
+import { Blurhash } from "react-blurhash";
+
 import test1 from "../assets/gallery-test/test-1.webp"
 import test2 from "../assets/gallery-test/test-2.webp"
 import test3 from "../assets/gallery-test/test-3.webp"
@@ -44,13 +46,22 @@ function Gallery({ clickedCategory, setClickedCategory }) {
 
     const [ clickedPhoto, setClickedPhoto ] = useState([])
     const [ filteredImages, setFilteredImages ] = useState(images)
+    const [ imageLoaded, setImageLoaded ] = useState(false)
 
     useEffect(() => {
+        // NOTE:  Filtering the images based on category
         if (clickedCategory) {
             setFilteredImages(images.filter(image => image.cat === clickedCategory ))
         } else {
             setFilteredImages(shuffle(images))
         }
+
+        // FIXME: create blurhash for the gallery
+        // const img = new Image()
+        // img.onload = () => {
+        //     setImageLoaded(true) 
+        //     console.log(imageLoaded);
+        // }
     }, [clickedCategory])
 
     function showImage(event) {
@@ -112,10 +123,8 @@ function Gallery({ clickedCategory, setClickedCategory }) {
                 <div className="columns-1 lg:columns-3 sm:columns-2
                     gap-x-6 space-y-6">
                     { filteredImages.map((photo, index) => {
-                        return <div className="overflow-hidden group cursor-pointer" onClick={showImage} key={index}>
-                            <img loading={index < 3 ? 'eager' : 'lazy'} className="group-hover:scale-110 duration-300" src={photo.src} alt="" name={photo.cat} />
-                        </div>
-                    })}
+                        return <div className="overflow-hidden group cursor-pointer" onClick={showImage} key={index}><img loading={index < 3 ? 'eager' : 'lazy'} className="group-hover:scale-110 duration-300" src={photo.src} alt="" name={photo.cat} /></div>
+                    }) }
                 </div>
                 
                 {/* preview */}
