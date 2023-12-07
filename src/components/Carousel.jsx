@@ -51,7 +51,10 @@ function Carousel(props) {
             tl.to('#fake-layer', { opacity: 0, duration: 1, })
             tl.to('#logo', { opacity: 1, duration: 0.5, y: '0%' })
             tl.to('#line', { opacity: 1, duration: 0.5, y: '0%' })
-            // tl.to('#loading-bar', { width: '100%', duration: 4, ease: 'none' })
+            tl.to('#loading-bar', { width: '100%', duration: 6, ease: "power2.out" })
+            tl.to('#loading-bar', { opacity: '0%', duration: 0.4 })
+            tl.set('#loading-bar', { width: '0%', })
+            tl.to('#loading-bar', { opacity: '30%' })
         });
     }
 
@@ -87,7 +90,7 @@ function Carousel(props) {
 
             // img.src = carousels[carouselIndex].src
             // setCarouselDisplayed(img.src)
-        }, 6000);
+        }, 8000);
         img.src = carousels[carouselIndex]
         setCarouselDisplayed(img.src)
 
