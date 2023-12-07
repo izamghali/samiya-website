@@ -74,10 +74,13 @@ function Carousel(props) {
 
         const timer = setTimeout(() => {
 
+            gsap.to('#logo', { opacity: 0, duration: 0.5, y: '20%' })
+            gsap.to('#line', { opacity: 0, duration: 0.5, y: '20%' })
+
             gsap.fromTo('#fake-layer', { 
-                opacity: '0%'
+                opacity: '0%', duration: 1,
             }, {
-                opacity: '100%', duration: 1, onComplete: changeCarousel
+                opacity: '100%', onComplete: changeCarousel
             })
             
             // gsap.to('#loading-bar', { width: '0%' })
