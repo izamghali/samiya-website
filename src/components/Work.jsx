@@ -50,9 +50,6 @@ function Work(props) {
 
             {/* content container */}
             {/* NOTE:  cont */}
-            {/* lg:min-w-[25rem] */}
-            {/* lg:max-w-[30rem] lg:min-w-[28rem] */}
-            {/* lg:min-w-[38%] lg:max-w-[40%] */}
             <div className="py-10 px-4 md:px-8 sm:px-6 lg:w-[52%] lg:max-w-[26rem] xl:min-w-[25rem] "> 
                 <h2 className="margin-heading">How We Work</h2>
 

@@ -1,45 +1,10 @@
 import React, { useState, useEffect, useRef } from "react"
-import carousel1 from '../assets/carousel/1.webp';
-import carousel2 from '../assets/carousel/2.webp';
-import carousel3 from '../assets/carousel/3.webp';
-import carousel4 from '../assets/carousel/4.webp';
-import carousel5 from '../assets/carousel/5.webp';
-import carousel6 from '../assets/carousel/6.webp';
-
+import { carousels } from "../data";
 import { Blurhash } from "react-blurhash";
 import gsap from "gsap";
 import { encode } from "blurhash";
 
 function Carousel(props) {
-
-    // const carousels = [
-    //     {
-    //         src: carousel1,
-    //         hash: "LEAvd%0g58}?E3xDt6R.0N-oxsIq"
-    //     },
-    //     {
-    //         src: carousel2,
-    //         hash: "L9FY415?5TD%~Bt7T0RP0K8_xbxt"
-    //     },
-    //     {
-    //         src: carousel3,
-    //         hash: "L2D8|58_0I}t_#lo0{Mz000e]wL%"
-    //     },
-    //     {
-    //         src: carousel4,
-    //         hash: "L2D8|58_0I}t_#lo0{Mz000e]wL%"
-    //     },
-    //     {
-    //         src: carousel5,
-    //         hash: "L2D8|58_0I}t_#lo0{Mz000e]wL%"
-    //     },
-    //     {
-    //         src: carousel6,
-    //         hash: "L2D8|58_0I}t_#lo0{Mz000e]wL%"
-    //     },
-    // ]
-
-    const carousels = [ carousel1, carousel2, carousel3, carousel4, carousel5, carousel6 ]
 
     const [ imageLoaded, setImageLoaded ] = useState(false)
     const [ carouselDisplayed, setCarouselDisplayed ] = useState()
