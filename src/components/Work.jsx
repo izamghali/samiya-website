@@ -35,7 +35,7 @@ function Work(props) {
     ]
 
     return (
-        <section className="white-cont md:flex lg:h-screen" id="work">
+        <section className="white-cont md:flex md:justify-end lg:h-screen" id="work">
             
             {/* carousel container */}
             {/* type 1: w-full xl:w-[120%] lg:w-[110%] h-auto overflow-hidden */}
@@ -44,13 +44,16 @@ function Work(props) {
                 {/* lg:max-h-[30rem] object-center flex items-center */}
                 <div className="lg:h-full xl:h-auto">
                     {/* test carousel */}
-                    <img className="lg:h-full xl:h-auto object-cover object-right" src={testImg} alt="" />
+                    <img className="lg:h-full lg:w-screen xl:h-auto object-cover object-right" src={testImg} alt="" />
                 </div>
             </div>
 
             {/* content container */}
             {/* NOTE:  cont */}
-            <div className="py-10 px-4 md:px-8 sm:px-6 lg:min-w-[25rem]"> 
+            {/* lg:min-w-[25rem] */}
+            {/* lg:max-w-[30rem] lg:min-w-[28rem] */}
+            {/* lg:min-w-[38%] lg:max-w-[40%] */}
+            <div className="py-10 px-4 md:px-8 sm:px-6 lg:w-[52%] lg:max-w-[26rem] xl:min-w-[25rem] "> 
                 <h2 className="margin-heading">How We Work</h2>
 
                 {/* container */}
@@ -68,9 +71,9 @@ function Work(props) {
                             </div> */}
 
                             <div className="w-full">
-                                <div className="flex justify-between w-full border-b-[1.5px] border-stone-400">
+                                <div className="flex items-center justify-between w-full border-b-[1.5px] border-stone-400">
                                     <h3 className="font-medium text-xl">{data.heading}</h3>
-                                    <span className="font-light ">{data.duration}</span>
+                                    <span className="font-light lg:text-sm xl:text-base">{data.duration}</span>
                                 </div>
                                 <p className="font-extralight text-lightGray">{data.desc}</p>
                             </div>
