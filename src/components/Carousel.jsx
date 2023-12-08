@@ -47,10 +47,10 @@ function Carousel(props) {
     // }
 
     function openingPage() {
+        tl.to('#fake-layer', { opacity: 0, duration: 1, })
+        tl.to('#logo', { opacity: 1, duration: 0.5, y: '0%' })
+        tl.to('#line', { opacity: 1, duration: 0.5, y: '0%' })
         mm.add("(min-width: 976px)", () => {
-            tl.to('#fake-layer', { opacity: 0, duration: 1, })
-            tl.to('#logo', { opacity: 1, duration: 0.5, y: '0%' })
-            tl.to('#line', { opacity: 1, duration: 0.5, y: '0%' })
             tl.to('#loading-bar', { width: '100%', duration: 6, ease: "power2.out" })
             tl.to('#loading-bar', { opacity: '0%', duration: 0.4 })
             tl.set('#loading-bar', { width: '0%', })
@@ -133,7 +133,7 @@ function Carousel(props) {
         <section className="overflow-hidden relative">
 
             <div id="loading-bar" className="bg-white opacity-30 absolute top-0 left-0 lg:h-[0.5rem] w-[0rem] z-10" ></div>
-            <div id="fake-layer" className="hidden lg:block bg-stone-950 absolute top-0 left-0 w-full h-full"></div>
+            <div id="fake-layer" className=" bg-stone-950 absolute top-0 left-0 w-full h-full"></div>
             {/* bg-gradient-to-b from-[rgba(0,0,0,0)] to-stone-950  */}
             <div id="layer" className="bg-gradient-to-b from-[rgba(0,0,0,0)] from-40% to-stone-950 to-100% absolute top-0 left-0 w-full h-full"></div>
 
