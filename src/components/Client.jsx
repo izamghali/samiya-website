@@ -39,7 +39,7 @@ function Client(props) {
     shuffle(clients)
     
     return (
-        <section className="cont white-cont lg:h-screen">
+        <section className="cont white-cont tall:h-screen h-full">
             <h2 className="text-center margin-heading">Our Clients</h2>
             
             {/* grid container */}
@@ -47,7 +47,7 @@ function Client(props) {
                 
                 {clients.map((data, index) => {
                     return <div className="w-36 justify-self-center " key={index}>
-                        <img src={data} alt="" />
+                        <img loading="lazy" src={data} alt="" />
                     </div>
                 })}
             </div>

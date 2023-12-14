@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import { shuffle, filterTextColorChange } from "../helpers.js";
-import { Blurhash } from "react-blurhash";
 import { galleryImages } from "../data.js";
 
 function Gallery({ clickedCategory, setClickedCategory }) {

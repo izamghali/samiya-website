@@ -10,7 +10,8 @@ export default {
       sm: '480px',
       md: '768px',
       lg: '976px',
-      xl: '1440px'
+      xl: '1440px',
+      tall: { 'raw': '(min-height: 820px)' },
     },
     extend: {
       colors: {
@@ -20,18 +21,26 @@ export default {
         lightGray: '#595959',
         darkGray: '#ADADAD',
         lighterGray: '#E8EBF2',
-
       },
       fontFamily: {
         inter: ['Inter'],
         mont: ['Montserrat']
       },
-      backgroundImage: {
-        'about1': "url('./src/assets/bg-img/food-11.webp')",
-        'about2': "url('./src/assets/bg-img/food-133.webp')",
-        'about3': "url('./src/assets/bg-img/food-100.webp')",
-        'about4': "url('./src/assets/bg-img/food-84.webp')",
-        'about5': "url('./src/assets/bg-img/food-135.webp')",
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+        'up-down-1': 'up-down 1s ease-in-out infinite',
+        'up-down-2': 'up-down 1s ease-in-out 100ms  infinite',
+        'up-down-3': 'up-down 1s ease-in-out 200ms  infinite',
+      },
+      keyframes: {
+        'wiggle': {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        }, 
+        'up-down': {
+          '0%, 100%': { transform: 'translateY(-50%)' },
+          '50%': { transform: 'translateY(50%)' },
+        }
       }
     },
   },

@@ -35,7 +35,7 @@ function Work(props) {
     ]
 
     return (
-        <section className="white-cont md:flex md:justify-end lg:h-screen" id="work">
+        <section className="white-cont md:flex md:justify-end tall:h-screen h-full" id="work">
             
             {/* carousel container */}
             {/* type 1: w-full xl:w-[120%] lg:w-[110%] h-auto overflow-hidden */}

@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import { carousels } from "../data";
-import { Blurhash } from "react-blurhash";
 import gsap from "gsap";
-import { encode } from "blurhash";
 
 function Carousel(props) {
 
@@ -13,38 +11,13 @@ function Carousel(props) {
     const tl = gsap.timeline()
     let mm = gsap.matchMedia();
 
-    // function pageFirstLoad(bar, layer, fakeLayer, logo, line) {
-    //     // const barDuration = 4;
-    
-    //     mm.add("(min-width: 976px)", () => {
-    //         tl.to(fakeLayer, { opacity: 0, duration: 1, })
-    //         tl.to(logo, { opacity: 1, duration: 0.5, y: '0%' })
-    //         tl.to(line, { opacity: 1, duration: 0.5, y: '0%' })
-    //     });
-    
-    //     // NOTE:  this works
-    //     // tl.to(bar, {
-    //     //     width: '100%',
-    //     //     duration: barDuration,
-    //     //     ease: 'none'
-    //     // })
-    
-    //     // NOTE:  this works
-    //     // tl.to(layer, { backgroundColor: 'rgb(12, 10,9)', duration: 1})
-    //     // tl.to(layer, { backgroundColor: 'rgb(12, 10,9)', duration: 1,}).yoyo(true).repeat(1)
-        
-    //     // NOTE:  this works
-    //     // tl.set(bar, { width: '0%' })
-        
-    //     // tl.to('#carousel-layer', {
-    //     //     background: 'rgb(12, 10,9)',
-    //     //     duration: 1
-    //     // }).yoyo(true).repeat(1)
-    //     // tl.to('#carousel-layer', {
-    //     //     duration: 2,
-    //     //     background: 'linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(12,10,9,1) 100%)',
-    //     // })
-    // }
+    function changeCarousel() {
+        if (carouselIndex === 5) {
+            setCarouselIndex(0)
+        } else {
+            setCarouselIndex(carouselIndex + 1)
+        }
+    }
 
     function openingPage() {
         tl.to('#fake-layer', { opacity: 0, duration: 1, })
@@ -56,21 +29,6 @@ function Carousel(props) {
             tl.set('#loading-bar', { width: '0%', })
             tl.to('#loading-bar', { opacity: '30%' })
         });
-    }
-
-    function changeCarousel() {
-        if (carouselIndex === 5) {
-            setCarouselIndex(0)
-        } else {
-            setCarouselIndex(carouselIndex + 1)
-        }
-    }
-
-    useEffect(() => {
-        const img = new Image()
-        img.onload = () => {
-            setImageLoaded(true) 
-        }
 
         const timer = setTimeout(() => {
 
@@ -94,38 +52,19 @@ function Carousel(props) {
             // img.src = carousels[carouselIndex].src
             // setCarouselDisplayed(img.src)
         }, 8000);
+    }
+
+    useEffect(() => {
+        const img = new Image()
+        img.onload = () => {
+            setImageLoaded(true) 
+            openingPage()
+        }
+        
         img.src = carousels[carouselIndex]
         setCarouselDisplayed(img.src)
 
         // return () => clearTimeout(timer)
-
-
-        // setCarouselDisplayed(carousels[carouselIndex].src)
-
-        // const loadImage = async src =>
-        //     new Promise((resolve, reject) => {
-        //         const img = new Image();
-        //         img.onload = () => resolve(img);
-        //         img.onerror = (...args) => reject(args);
-        //         img.src = carousels[index].src;
-        // });
-
-        // const getImageData = image => {
-        //     const canvas = document.createElement("canvas");
-        //     canvas.width = image.width;
-        //     canvas.height = image.height;
-        //     const context = canvas.getContext("2d");
-        //     context.drawImage(image, 0, 0);
-        //     return context.getImageData(0, 0, image.width, image.height);
-        // };
-
-        // const encodeImageToBlurhash = async imageUrl => {
-        //     const image = await loadImage(imageUrl);
-        //     const imageData = getImageData(image);
-        //     return encode(imageData.data, imageData.width, imageData.height, 4, 4);
-        // };
-
-        // console.log(encodeImageToBlurhash(img));
 
     }, [carouselDisplayed, carouselIndex])
     
@@ -154,7 +93,7 @@ function Carousel(props) {
 
             {/* NOTE: Blurhash */}
             { imageLoaded ? 
-                <img src={carouselDisplayed} alt="" onLoad={openingPage} /> : 
+                <img src={carouselDisplayed} alt="" /> : 
                 // <Blurhash
                 //     className="scale-105"
                 //     hash="L01Vi3j@fQj@j[fQfQfQfQfQfQfQ"
@@ -164,7 +103,13 @@ function Carousel(props) {
                 //     resolutionY={128}
                 //     punch={1}
                 // />
-                <div className="bg-stone-950 h-screen w-full"></div>
+                <div className=" bg-stone-950 h-screen w-full flex justify-center items-center">
+                    <div className="flex gap-3">
+                        <div className="animate-up-down-1 loading-dot w-5 h-5 border-2 border-white rounded-full"></div>
+                        <div className="animate-up-down-2 loading-dot w-5 h-5 border-2 border-white rounded-full"></div>
+                        <div className="animate-up-down-3 loading-dot w-5 h-5 border-2 border-white rounded-full"></div>
+                    </div>
+                </div>
             }
         </section>
     )
