@@ -1,7 +1,7 @@
 import React from "react"
 import testImg from '../assets/studio-crop.jpg';
 
-function Work(props) {
+function Work({loadingState}) {
 
     const workData = [
         {
@@ -44,7 +44,7 @@ function Work(props) {
                 {/* lg:max-h-[30rem] object-center flex items-center */}
                 <div className="lg:h-full xl:h-auto">
                     {/* test carousel */}
-                    <img className="lg:h-full lg:w-screen xl:h-auto object-cover object-right" src={testImg} alt="" />
+                    <img className="lg:h-full lg:w-screen xl:h-auto object-cover object-right" src={testImg} alt="" loading={ loadingState ? "eager" : "lazy" } />
                 </div>
             </div>
 

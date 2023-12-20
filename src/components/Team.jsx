@@ -3,7 +3,7 @@ import profile1 from '../assets/team/1.webp';
 import profile2 from '../assets/team/2.webp';
 import profile3 from '../assets/team/3.webp';
 
-function Team(props) {
+function Team({loadingState}) {
 
     const teamData = [
         {
@@ -42,7 +42,7 @@ function Team(props) {
                 {/* card */}
                 {teamData.map((data, index) => {
                     return <div className="snap-start lg:snap-align-none relative group md:max-w-[26rem] sm:w-[24rem] w-full overflow-hidden" key={index}>
-                            <img className=" w-full rounded-tr-lg rounded-tl-lg md:rounded-br-lg md:rounded-bl-lg" src={data.img} alt="" />
+                            <img className=" w-full rounded-tr-lg rounded-tl-lg md:rounded-br-lg md:rounded-bl-lg" src={data.img} alt="" loading={ loadingState ? "eager" : "lazy" }/>
 
                             {/* card content */}
                             <div className="

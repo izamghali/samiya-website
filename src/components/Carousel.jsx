@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react"
 import { carousels } from "../data";
 import gsap from "gsap";
 
-function Carousel(props) {
+function Carousel({ setLoadingState }) {
 
     const [ imageLoaded, setImageLoaded ] = useState(false)
     const [ carouselDisplayed, setCarouselDisplayed ] = useState()
@@ -57,6 +57,7 @@ function Carousel(props) {
     useEffect(() => {
         const img = new Image()
         img.onload = () => {
+            setLoadingState(true)
             setImageLoaded(true) 
             openingPage()
         }
@@ -93,7 +94,7 @@ function Carousel(props) {
 
             {/* NOTE: Blurhash */}
             { imageLoaded ? 
-                <img src={carouselDisplayed} alt="" /> : 
+                <img src={carouselDisplayed} alt="" loading="eager"/> : 
                 // <Blurhash
                 //     className="scale-105"
                 //     hash="L01Vi3j@fQj@j[fQfQfQfQfQfQfQ"

@@ -7,7 +7,7 @@ import img3 from '../assets/check-gallery/food-135.webp';
 import img4 from '../assets/check-gallery/food-47.webp';
 import img5 from '../assets/check-gallery/food-87.jpg';
 
-function CheckGallery({ setPage }) {
+function CheckGallery({ setPage, loadingState }) {
 
     const imgArr = [img1, img2, img3, img4, img5];
     const randomIndex = Math.floor(Math.random() * imgArr.length)
@@ -28,7 +28,7 @@ function CheckGallery({ setPage }) {
                 { imgArr.map((data, index) => {
                     return <div className="w-[40rem] rotate-[82deg] overflow-hidden 
                             blur-[1.5px] hover:blur-0 duration-700" key={index}>
-                        <img className="w-full h-full -rotate-[82deg] hover:scale-105 duration-700" src={data} alt="" key={index} />
+                        <img className="w-full h-full -rotate-[82deg] hover:scale-105 duration-700" src={data} alt="" key={index} loading={ loadingState ? "eager" : "lazy" } />
                     </div>
                 })}
 

@@ -27,7 +27,7 @@ import client22 from '../assets/clients/22.png';
 import client23 from '../assets/clients/23.png';
 import client24 from '../assets/clients/24.png';
 
-function Client(props) {
+function Client({loadingState}) {
 
     // const testArr = Array.from(Array(24).keys());
     const clients = [
@@ -47,7 +47,7 @@ function Client(props) {
                 
                 {clients.map((data, index) => {
                     return <div className="w-36 justify-self-center " key={index}>
-                        <img loading="lazy" src={data} alt="" />
+                        <img loading={ loadingState ? "eager" : "lazy" } src={data} alt="" />
                     </div>
                 })}
             </div>

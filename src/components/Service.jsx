@@ -3,7 +3,7 @@ import img1 from '../assets/gallery/food/selected/food-128.webp';
 import img2 from '../assets/gallery/fashion/fashion-20.webp';
 import img3 from '../assets/gallery/product/product-4.webp';
 
-function Service(props) {
+function Service({loadingState}) {
 
     const serviceData = [
         {
@@ -52,7 +52,7 @@ function Service(props) {
                                         h-[20rem] w-full
                                         rounded-lg overflow-hidden
                                     ">
-                                    <img className="" src={data.img} alt="" />
+                                    <img className="" src={data.img} alt="" loading={ loadingState ? "eager" : "lazy" }/>
                                     <span className="absolute top-4 right-4 bg-black opacity-80 text-white p-1 rounded-md">
                                         Photo
                                     </span>

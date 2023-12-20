@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import Carousel from "./Carousel";
 import About from "./About";
 import Service from "./Service";
@@ -10,19 +10,21 @@ import CheckGallery from "./CheckGallery";
 
 function HomePage({ setPage, setClickedCategory }) {
 
+    const [ loadingState, setLoadingState ] = useState(false)
+
     useEffect(() => {
         setClickedCategory('')
     })
 
     return (
         <div className="">
-            <Carousel/>
-            <Service/>
-            <Work/>
-            <Team/>
+            <Carousel setLoadingState={setLoadingState} />
+            <Service loadingState={loadingState}/>
+            <Work loadingState={loadingState}/>
+            <Team loadingState={loadingState}/>
             <About />
-            <CheckGallery setPage={setPage} />
-            <Client/>
+            <CheckGallery setPage={setPage} loadingState={loadingState} />
+            <Client loadingState={loadingState}/>
             <Footer />
         </div>
     )
