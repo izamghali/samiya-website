@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './App.css'
 import Navbar from './components/Navbar'
 import Gallery from './components/Gallery'
 import HomePage from './components/HomePage'
@@ -26,7 +25,6 @@ function App() {
   snapScroll();
     
   return (
-    <>
     <div className="dark">
       <ContactPage/>
 
@@ -42,7 +40,6 @@ function App() {
       }
       
     </div>
-    </>
   )
 }
 

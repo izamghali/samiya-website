@@ -10,7 +10,9 @@ export default {
       sm: '480px',
       md: '768px',
       lg: '976px',
-      xl: '1440px',
+      xl: '1290px',
+      '2xl': '1440px',
+      '3xl': '1536px',
       tall: { 'raw': '(min-height: 820px)' },
     },
     extend: {
