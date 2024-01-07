@@ -141,7 +141,7 @@ function Navbar(props) {
                     <a onClick={displayHomePage} href="#work">How We Work</a>
                     {/* FIX: dark/light mode toggle */}
                     
-                    <button className="border-2 rounded-lg px-6 py-2 duration-300 font-semibold
+                    <button className="border-2 rounded-lg px-6 py-2 duration-300 font-medium
                         bg-stone-950 dark:bg-stone-100 
                         border-stone-950 dark:border-white
                         text-stone-100 dark:text-stone-950 

@@ -35,28 +35,28 @@ function Work({loadingState}) {
     ]
 
     return (
-        <section className="white-cont md:flex md:justify-end tall:h-screen h-full" id="work">
+        <section className="white-cont md:flex md:justify-end lg:tall:h-screen h-full" id="work">
             
             {/* carousel container */}
             {/* type 1: w-full xl:w-[120%] lg:w-[110%] h-auto overflow-hidden */}
             {/* type 2 : h-min lg:block lg:w-[110%] xl:w-[120%] */}
             <div className="hidden h-auto lg:block overflow-hidden">
                 {/* lg:max-h-[30rem] object-center flex items-center */}
-                <div className="lg:h-full xl:h-auto">
+                <div className="lg:h-full">
                     {/* test carousel */}
-                    <img className="lg:h-full lg:w-screen xl:h-auto object-cover object-right" src={testImg} alt="" loading={ loadingState ? "eager" : "lazy" } />
+                    <img className="lg:h-full lg:w-screen object-cover object-right" src={testImg} alt="" loading={ loadingState ? "eager" : "lazy" } />
                 </div>
             </div>
 
             {/* content container */}
             {/* NOTE:  cont */}
-            <div className="py-10 px-4 md:px-8 sm:px-6 lg:w-[52%] lg:max-w-[26rem] xl:min-w-[25rem] "> 
+            <div className="py-10 px-4 md:px-8 sm:px-6 lg:w-[52%] lg:max-w-[26rem] xl:min-w-[25rem]"> 
                 <h2 className="margin-heading">How We Work</h2>
 
                 {/* container */}
-                <div className="flex flex-col justify-between h-max gap-4">
+                <div className="flex flex-col justify-between xl:h-max gap-6 md:gap-8">
                     {workData.map((data, index) => {
-                        return <div className=" flex items-center p-2 gap-2 rounded-lg" key={index}>
+                        return <div className=" flex items-center gap-2  border-red-400" key={index}>
 
                             {/* svg icon */}
                             {/* <div className="border-2 border-lightGray p-2 rounded-full sm:block hidden">

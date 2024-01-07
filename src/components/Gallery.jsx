@@ -60,8 +60,7 @@ function Gallery({ clickedCategory, setClickedCategory }) {
             setClickedCategory(event.target.innerHTML)
             filterTextColorChange(event)
         } 
-
-        
+ 
     }
 
     return (

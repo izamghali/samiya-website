@@ -41,16 +41,6 @@ function Carousel({ setLoadingState }) {
                 opacity: '100%', onComplete: changeCarousel
             })
             
-            // gsap.to('#loading-bar', { width: '0%' })
-            // gsap.to('#loading-bar', { width: '100%', duration: 4, ease: 'none' })
-            
-            // gsap.to('#fake-layer', { opacity: '0%', duration: 1 })
-            // gsap.to('#fake-layer', { opacity: 0, duration: 1, })
-            // gsap.to('#layer', { backgroundColor: 'rgb(12, 10,9)', duration: 1, onComplete: changeCarousel})
-            // gsap.to('#layer', { backgroundColor: 'rgb(12, 10,9)', duration: 1}).yoyo(true).repeat(1)
-
-            // img.src = carousels[carouselIndex].src
-            // setCarouselDisplayed(img.src)
         }, 8000);
     }
 

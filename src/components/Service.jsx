@@ -25,7 +25,7 @@ function Service({loadingState}) {
     ]
 
     return (
-        <section className="lg:py-10 tall:h-screen h-full cont black-cont flex flex-col justify-between xl:justify-evenly" id="service">
+        <section className="lg:py-10 lg:tall:h-screen h-full cont black-cont flex flex-col justify-between xl:justify-evenly" id="service">
             <div>
                 <h2 className="text-center text-white">Our Photography Services</h2>
                 <p className="text-center font-mont margin-heading text-darkGray lg:text-lg">Capture Moments with Samiya Studio</p>

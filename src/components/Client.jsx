@@ -39,11 +39,11 @@ function Client({loadingState}) {
     shuffle(clients)
     
     return (
-        <section className="cont white-cont tall:h-screen h-full">
+        <section className="cont white-cont 2xl:tall:h-screen h-full">
             <h2 className="text-center margin-heading">Our Clients</h2>
             
             {/* grid container */}
-            <div className="grid md:grid-cols-4 lg:grid-cols-6 sm:grid-cols-3 grid-cols-2 gap-y-4 gap-x-4">
+            <div className="grid lg:grid-cols-4 sm:grid-cols-3 2xl:grid-cols-6 grid-cols-2 gap-y-4 gap-x-4">
                 
                 {clients.map((data, index) => {
                     return <div className="w-36 justify-self-center " key={index}>
