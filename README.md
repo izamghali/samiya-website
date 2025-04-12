@@ -1,7 +1,7 @@
 # Samiya Studio Repo
 This is a repository for the official Samiya Studio Website
 
-Feel free to visit [samiyastudio.com](https://samiyastudio.com/) 
+Feel free to visit [https://samiyastudio.netlify.app](https://samiyastudio.netlify.app) 
 <!-- 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 Currently, two official plugins are available:
